@@ -1,0 +1,2435 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0d1216">
+<meta name="description" content="رحّال: كرة أرضية ملونة لكل دولة، وتحديات الأعلام والعواصم والقارات والخريطة لكل الدول والجزر.">
+<title>رحّال — العالم ينتظر إجابتك</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://flagcdn.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;450;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{
+  --bg:#0d1216;--sidebar:#11171c;--surface:#151d23;--surface-2:#1b252c;
+  --line:#263138;--text:#edf1ee;--muted:#91a099;--dim:#61716b;
+  --lime:#b8eb83;--lime-dark:#233529;--purple:#b6a1ee;--cyan:#81cbd7;
+  --orange:#eab57e;--red:#ef9390;--radius:15px;
+  --font:'IBM Plex Sans Arabic',sans-serif;--numbers:'Manrope',sans-serif;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:95px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);font-size:14px;line-height:1.6}
+button,input,select{font:inherit}
+button,a,input,select{-webkit-tap-highlight-color:transparent}
+button{cursor:pointer;color:inherit;border:0;background:none}
+button:disabled{cursor:default}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p{margin:0}
+img{max-width:100%;display:block}
+svg{display:block}
+::selection{background:#b8eb8340;color:#eaffda}
+:focus-visible{outline:2px solid var(--lime);outline-offset:4px}
+::-webkit-scrollbar{width:7px;height:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:#35423b;border-radius:8px}
+.icon{width:21px;height:21px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+.number{font-family:var(--numbers);font-variant-numeric:tabular-nums;direction:ltr;display:inline-block}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip-link{position:fixed;top:-60px;right:20px;z-index:100;background:var(--lime);color:#152217;padding:12px 20px;border-radius:8px}
+.skip-link:focus{top:12px}
+.sidebar{position:fixed;inset:0 0 0 auto;width:236px;padding:28px 17px 18px;background:var(--sidebar);border-left:1px solid #222c30;display:flex;flex-direction:column;z-index:40}
+.brand{display:flex;align-items:center;gap:12px;padding:0 13px;margin-bottom:28px;text-align:right}
+.brand-logo{width:43px;height:43px;border-radius:13px;background:var(--lime);color:#253725;display:grid;place-items:center;box-shadow:0 4px 22px #b8eb8310;transform:rotate(-5deg)}
+.brand-logo .icon{width:28px;height:28px;transform:rotate(5deg);stroke-width:1.6}
+.brand-name{font-size:32px;font-weight:700;letter-spacing:-1.5px;line-height:1.3}
+.brand-tagline{font-size:10px;color:var(--muted);display:block;margin-top:2px}
+.nav-caption{font-size:10px;color:#6e7e76;padding:0 14px;margin:20px 0 10px}
+.nav-item{width:100%;display:flex;align-items:center;gap:11px;padding:12px 14px;margin:3px 0;border-radius:9px;color:#a3afa9;font-size:13px;text-align:right;position:relative;transition:background .2s,color .2s}
+.nav-item .icon{width:19px;height:19px;color:#809189}
+.nav-item:hover{background:#1a2429;color:#e4eae3}
+.nav-item.active{background:#233329;color:var(--lime)}
+.nav-item.active .icon{color:var(--lime)}
+.nav-item.active:before{content:"";position:absolute;right:0;top:15px;bottom:15px;width:3px;border-radius:3px;background:var(--lime)}
+.nav-count{margin-inline-start:auto;font-family:var(--numbers);font-size:10px;background:#222d32;border:1px solid #304038;border-radius:5px;padding:1px 6px;color:#a8b4aa}
+.nav-separator{height:1px;background:#222b30;margin:17px 12px 0}
+.sidebar-bottom{margin-top:auto;padding-top:24px}
+.passport{padding:14px;background:linear-gradient(125deg,#1b2720,#17201e);border:1px solid #2c3c2f;border-radius:12px}
+.passport-top{display:flex;align-items:center;gap:9px}
+.passport-icon{display:grid;place-items:center;width:33px;height:36px;color:var(--lime);background:#293c29;border-radius:8px}
+.passport-top strong{display:block;font-size:12px;font-weight:500}
+.passport-top small{font-size:9px;color:#8b9c8c}
+.passport-progress{height:4px;background:#314032;border-radius:4px;margin:14px 0 8px;overflow:hidden}
+.passport-progress span{display:block;height:100%;width:0;background:var(--lime);border-radius:4px;transition:width .5s}
+.passport-bottom{display:flex;align-items:center;justify-content:space-between;color:#8e9e8f;font-size:10px}
+.passport-bottom .number{font-size:10px;color:#b4c5b1}
+.sidebar-help{margin-top:14px;font-size:12px;padding:11px 13px}
+.sidebar-foot{display:flex;align-items:center;justify-content:center;gap:6px;color:#52655b;font-size:10px;margin-top:14px}
+.sidebar-foot .icon{width:12px;height:12px}
+.app-shell{margin-right:236px;min-height:100vh}
+.topbar{height:75px;padding:0 34px;border-bottom:1px solid #222b2f;display:flex;align-items:center;gap:16px;position:sticky;top:0;background:#0d1216ed;backdrop-filter:blur(16px);z-index:25}
+.breadcrumb{display:flex;align-items:center;gap:12px;font-size:11px;color:#788b81;white-space:nowrap}
+.breadcrumb .icon{width:16px;height:16px}
+.breadcrumb .slash{color:#425249}
+.breadcrumb-current{color:#c5d0c7}
+.topbar-actions{display:flex;align-items:center;gap:10px;margin-inline-start:auto}
+.top-timer{display:flex;align-items:center;gap:10px;border:1px solid #2a382e;background:#152018;padding:6px 12px;border-radius:9px;min-height:41px}
+.top-timer .icon{color:var(--lime);width:19px;height:19px}
+.top-timer small{font-size:9px;color:#8f9e8c;display:block;line-height:1.4}
+.top-timer .number{font-size:12px;color:#d9e7d4;letter-spacing:1px;line-height:1.5}
+.icon-btn{display:grid;place-items:center;width:37px;height:37px;border:1px solid var(--line);background:#151d22;border-radius:9px;color:#9baa9f;transition:.2s}
+.icon-btn:hover{border-color:#6b855d;color:var(--lime);background:#1b2820}
+.icon-btn .icon{width:18px;height:18px}
+.icon-btn.sound-on{color:var(--lime);border-color:#496440}
+.avatar{width:35px;height:35px;margin-inline-start:5px;border-radius:50%;background:#2c343e;border:1px solid #454958;display:grid;place-items:center;color:#d1c8ec;font-size:17px;font-weight:500;position:relative}
+.avatar:after{content:"";position:absolute;bottom:0;left:0;width:7px;height:7px;background:var(--lime);border:2px solid var(--bg);border-radius:50%}
+.mobile-menu{display:none}
+main{max-width:1440px;margin:auto;padding:27px 34px 24px}
+.intro{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:22px}
+.intro h1,.page-heading h1{font-size:29px;font-weight:600;line-height:1.5;letter-spacing:-.65px}
+.intro p,.page-heading p{color:var(--muted);font-size:12px;margin-top:4px;line-height:1.9}
+.intro-extra{color:#9fd0de;border:1px solid #2c5160;background:#15262c;padding:7px 11px;border-radius:30px;display:flex;align-items:center;gap:7px;font-size:10px;white-space:nowrap}
+.intro-extra .icon{width:14px;height:14px}
+.hero{min-height:272px;display:grid;grid-template-columns:1.12fr 1fr;position:relative;overflow:hidden;border:1px solid #2c5460;border-radius:18px;background:linear-gradient(118deg,#163644 0%,#14323a 42%,#152820 100%);isolation:isolate}
+.hero:before{content:"";position:absolute;inset:0;background-image:radial-gradient(#7eb0c222 .7px,transparent .7px);background-size:17px 17px;mask-image:linear-gradient(to right,#000,transparent 66%);z-index:-1}
+.hero-copy{padding:27px 31px;position:relative;z-index:3}
+.hero-eyebrow{display:flex;align-items:center;gap:10px;font-size:10px;color:#9ec4ce}
+.hero-label{display:flex;align-items:center;gap:5px;padding:3px 8px;border:1px solid #3d6d7c;background:#1c3c48;border-radius:5px;color:#c6e4f0}
+.hero-label .icon{width:12px;height:12px}
+.hero h2{font-size:35px;line-height:1.43;font-weight:600;letter-spacing:-.75px;margin:12px 0 9px}
+.hero h2 span{color:var(--lime)}
+.hero-description{color:#a9c0c4;font-size:12px;line-height:1.9}
+.hero-actions{display:flex;align-items:center;gap:17px;margin-top:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:10px 18px;min-height:43px;font-weight:500;font-size:13px;border-radius:9px;transition:transform .2s,background .2s,border-color .2s;white-space:nowrap}
+.btn .icon{width:17px;height:17px}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn-primary{background:var(--lime);color:#23371e;border:1px solid var(--lime);box-shadow:0 3px 14px #b8eb830b}
+.btn-primary:hover{background:#caf5a0}
+.btn-secondary{background:#1b252b;color:#cfdbd0;border:1px solid #34423a}
+.btn-secondary:hover{border-color:#6b825b;background:#233029}
+.btn-ghost{color:var(--muted);border:1px solid transparent}
+.btn-ghost:hover{background:var(--surface)}
+.btn-danger{background:#44282a;color:#f3b1ad;border:1px solid #71403d}
+.hero-record{font-size:9px;color:#97a68d;line-height:1.8}
+.hero-record span{display:flex;align-items:center;gap:5px}
+.hero-record .icon{width:12px;height:12px;color:#cfbc7d}
+.hero-record strong{color:#d1ddc5;font-size:11px;font-weight:500}
+.hero-art{height:100%;min-height:272px;position:relative}
+.planet-glow{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:280px;height:280px;background:#4aa3c228;filter:blur(25px);border-radius:50%}
+.hero-globe{position:absolute;left:50%;top:50%;width:322px;height:322px;transform:translate(-50%,-50%);z-index:1}
+.hero-globe:before{content:"";position:absolute;inset:7%;border-radius:50%;background:radial-gradient(circle at 34% 30%,#22607a,#0c2230 72%);box-shadow:inset 0 0 36px #0006,0 0 0 1px #7eb8c655;z-index:0}
+.hero-globe canvas{position:relative;z-index:1;width:100%;height:100%;display:block;border-radius:50%;cursor:grab;touch-action:none}
+.hero-globe canvas:active{cursor:grabbing}
+.globe-tip{position:absolute;z-index:5;background:#102028ee;border:1px solid #3e6a78;color:#e7f3ef;border-radius:8px;padding:3px 8px;font-size:10px;pointer-events:none;white-space:nowrap;transform:translate(-50%,-130%);backdrop-filter:blur(6px)}
+.floating-flag{position:absolute;display:flex;align-items:center;gap:8px;background:#233026;border:1px solid #475b3e;border-radius:9px;padding:8px 10px;box-shadow:0 10px 28px #0003;z-index:2;text-align:right}
+.floating-flag img{width:41px;height:27px;object-fit:cover;border-radius:3px}
+.floating-flag strong{font-size:11px;font-weight:500;color:#e5edde}
+.floating-flag small{display:block;font-size:8px;color:#a5b298;line-height:1.6}
+.flag-jp{top:28px;right:20px;transform:rotate(8deg)}
+.flag-br{top:123px;left:8px;transform:rotate(-8deg)}
+.flag-fr{bottom:23px;right:67px;transform:rotate(5deg)}
+.orbit-sparkle{position:absolute;top:30px;left:66px;color:#d0eda6}
+.orbit-sparkle .icon{width:22px;height:22px;stroke-width:1.2}
+.world-caption{display:flex;align-items:center;gap:5px;position:absolute;bottom:26px;left:33px;font-size:9px;color:#b7d4c8;z-index:2}
+.world-caption .icon{width:12px;height:12px}
+.stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:18px 0 28px}
+.stat-card{border:1px solid var(--line);background:var(--surface);border-radius:12px;min-height:94px;padding:14px 17px;display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.stat-label{font-size:10px;color:#a0aea4;display:block;margin-bottom:3px}
+.stat-value{font-size:28px;line-height:1.45;font-weight:700;letter-spacing:-1px}
+.stat-suffix{color:#6f8076;font-size:10px;margin-inline-start:4px}
+.stat-note{font-size:9px;color:#6f8077;display:block}
+.stat-icon{display:grid;place-items:center;width:33px;height:33px;border-radius:9px;margin-top:3px;flex-shrink:0}
+.stat-icon .icon{width:17px;height:17px}
+.green{color:var(--lime);background:#263326}
+.purple{color:var(--purple);background:#2b283a}
+.cyan{color:var(--cyan);background:#223139}
+.orange{color:var(--orange);background:#352e25}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
+.section-head h2{font-size:20px;font-weight:600;line-height:1.5}
+.section-head p{font-size:11px;color:var(--muted);margin-top:3px}
+.section-aside{font-size:10px;color:#73867b;display:flex;align-items:center;gap:6px}
+.section-aside .icon{width:14px;height:14px}
+.game-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.game-card{position:relative;display:block;width:100%;padding:18px 18px 14px;text-align:right;border:1px solid var(--line);background:var(--surface);border-radius:14px;transition:transform .25s,border-color .25s,box-shadow .25s;overflow:hidden;--accent:var(--lime)}
+.game-card:hover{transform:translateY(-5px);border-color:color-mix(in srgb,var(--accent) 50%,transparent);box-shadow:0 14px 24px #0002}
+.game-card.capitals-card{--accent:var(--purple)}
+.game-card.continents-card{--accent:var(--cyan)}
+.game-card.map-card{--accent:var(--orange)}
+.category-visual{display:flex;position:relative;height:73px;align-items:center;justify-content:flex-start;margin-bottom:13px}
+.card-top-label{position:absolute;left:0;top:0;font-size:8px;color:#b4d996;background:#26372a;border:1px solid #354932;border-radius:4px;padding:2px 6px}
+.mini-flags{display:block;width:145px;height:72px;position:relative}
+.mini-flags img{position:absolute;width:62px;height:43px;object-fit:cover;border:3px solid #24302d;border-radius:6px;box-shadow:0 5px 12px #0004}
+.mini-flags img:nth-child(1){right:2px;top:20px;transform:rotate(12deg)}
+.mini-flags img:nth-child(2){right:40px;top:7px;transform:rotate(-5deg);z-index:1}
+.mini-flags img:nth-child(3){right:80px;top:20px;transform:rotate(-14deg)}
+.category-art{width:122px;height:76px}
+.card-title{display:block;font-size:17px;font-weight:600;color:#e9eee8;margin-bottom:4px}
+.card-description{display:block;font-size:11px;line-height:1.8;color:#97a59c}
+.card-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px;margin-bottom:14px}
+.card-tags span{font-size:9px;color:#a0afa4;border:1px solid #2a3737;background:#1b252a;padding:2px 6px;border-radius:4px}
+.card-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #263137;padding-top:11px}
+.category-time{font-size:10px;color:#81938a;display:flex;align-items:center;gap:5px}
+.category-time .icon{width:12px;height:12px}
+.category-time .number{font-size:10px;color:#aab6aa}
+.card-arrow{width:27px;height:27px;display:grid;place-items:center;border:1px solid #34423b;border-radius:7px;color:var(--accent);transition:.2s}
+.card-arrow .icon{width:14px;height:14px}
+.game-card:hover .card-arrow{background:var(--accent);color:#18231c;border-color:var(--accent)}
+.index-preview{margin-top:30px}
+.text-link{display:flex;align-items:center;gap:7px;color:var(--lime);font-size:11px;white-space:nowrap;padding:5px 0}
+.text-link .icon{width:14px;height:14px}
+.preview-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.preview-country{display:flex;align-items:center;gap:11px;padding:18px 14px;text-align:right;border-inline-end:1px solid var(--line);transition:background .2s;min-width:0}
+.preview-country:last-child{border-inline-end:0}
+.preview-country:hover{background:#1d2a25}
+.preview-country img{width:40px;height:28px;object-fit:cover;border-radius:3px;box-shadow:0 3px 8px #0002;flex-shrink:0}
+.preview-country strong{font-size:11px;font-weight:500;display:block}
+.preview-country small{font-size:9px;color:#83958a;display:block;margin-top:2px}
+.main-footer{margin-top:30px;border-top:1px solid #222e2c;padding-top:18px;display:flex;align-items:center;justify-content:space-between;gap:14px;color:#60756a;font-size:9px}
+.footer-right,.footer-left{display:flex;align-items:center;gap:6px}
+.main-footer .icon{width:12px;height:12px}
+.live-dot{width:5px;height:5px;background:#89b775;border-radius:50%;display:inline-block}
+.page{animation:page-in .3s ease both}
+@keyframes page-in{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+.page-heading{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:22px}
+.heading-group{display:flex;align-items:center;gap:15px}
+.heading-icon{width:52px;height:52px;display:grid;place-items:center;border-radius:14px;flex-shrink:0}
+.heading-icon .icon{width:25px;height:25px}
+.count-badge{font-family:var(--numbers);font-size:12px;border:1px solid #3b5232;background:#24331f;color:var(--lime);padding:3px 9px;border-radius:7px;margin-inline-start:9px;vertical-align:middle;letter-spacing:0}
+.catalog-toolbar{padding:18px;border:1px solid var(--line);background:var(--surface);border-radius:13px;margin-bottom:19px}
+.search-row{display:flex;gap:11px}
+.search-box{position:relative;flex:1}
+.search-box .icon{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:#7c9185;width:18px;height:18px;pointer-events:none}
+.search-box input{width:100%;color:var(--text);padding:11px 41px 11px 36px;background:#10181d;border:1px solid #304036;border-radius:8px;font-size:12px;min-height:44px;outline:none}
+.search-box input:focus{border-color:#89b963;box-shadow:0 0 0 3px #b8eb8309}
+.search-box input::placeholder{color:#708579}
+.search-clear{position:absolute;left:8px;top:50%;transform:translateY(-50%);padding:5px;color:#8da08f}
+.search-clear .icon{width:15px;height:15px}
+.sort-select{background:#10181d;color:#b2c0b3;border:1px solid #304036;border-radius:8px;padding:8px 12px;font-size:11px;max-width:170px}
+.view-switch{display:flex;gap:3px;padding:4px;border:1px solid #304036;border-radius:8px;background:#10181d}
+.view-switch button{padding:8px;border-radius:5px;color:#768d7e}
+.view-switch .icon{width:17px;height:17px}
+.view-switch button.selected{background:#2a3a29;color:var(--lime)}
+.continent-filters{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
+.filter-chip{display:flex;align-items:center;gap:7px;padding:6px 11px;border:1px solid #2c3a33;border-radius:7px;font-size:10px;color:#a1b1a3;transition:.2s}
+.filter-chip .number{font-size:9px;color:#708672}
+.filter-chip.selected{border-color:#647e4d;background:#283a24;color:var(--lime)}
+.filter-chip.selected .number{color:#a4c38d}
+.catalog-meta{display:flex;justify-content:space-between;font-size:11px;color:#7e9586;margin-bottom:15px;gap:10px}
+.catalog-meta strong{color:#c6d8c7;font-weight:500}
+.catalog-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.country-card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:17px;text-align:center;transition:border-color .2s,transform .2s;min-width:0}
+.country-card:hover{border-color:#62794c;transform:translateY(-3px)}
+.country-flag-box{height:92px;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse,#28342e88,transparent 74%);border-radius:7px}
+.country-flag-box img{max-width:108px;max-height:69px;object-fit:contain;box-shadow:0 5px 13px #0003;border-radius:2px}
+.country-meta strong{display:block;font-size:14px;font-weight:500;margin-top:11px}
+.country-meta small{display:flex;align-items:center;justify-content:center;gap:4px;font-size:11px;color:#91a695;margin:5px 0 10px}
+.country-meta small .icon{width:12px;height:12px}
+.continent-tag{display:inline-block;background:#24332a;color:#a5c099;font-size:9px;padding:2px 8px;border-radius:4px}
+.discovered-mark{position:absolute;left:11px;top:11px;color:var(--lime);background:#273a2a;border-radius:50%;padding:3px}
+.discovered-mark .icon{width:11px;height:11px}
+.country-list-arrow{display:none;color:#80917d}
+.catalog-grid.list-view{grid-template-columns:1fr}
+.list-view .country-card{display:flex;align-items:center;gap:22px;text-align:right;padding:12px 20px}
+.list-view .country-flag-box{height:55px;width:84px;flex-shrink:0}
+.list-view .country-flag-box img{max-width:65px;max-height:43px}
+.list-view .country-meta{flex:1}
+.list-view .country-meta strong{margin:0}
+.list-view .country-meta small{justify-content:flex-start;margin:3px 0 0}
+.list-view .country-list-arrow{display:block;margin-inline-start:20px}
+.list-view .discovered-mark{position:static;order:5}
+.load-more-wrap{text-align:center;margin-top:25px}
+.load-more-wrap p{font-size:10px;color:#799181;margin-top:10px}
+.empty-state{grid-column:1/-1;text-align:center;padding:60px 20px;border:1px dashed #354637;border-radius:12px;color:#879f8e}
+.empty-state .icon{width:35px;height:35px;margin:0 auto 14px;color:#a3bc90}
+.empty-state h3{font-size:18px;color:#d6e1d3;margin-bottom:7px}
+.empty-state p{font-size:12px}
+.catalog-note{font-size:10px;color:#667f6e;line-height:1.9;text-align:center;max-width:760px;margin:25px auto 0}
+.inner-time-chip{display:flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-size:10px;color:#98ac9c;white-space:nowrap}
+.inner-time-chip .icon{width:14px;height:14px;color:var(--lime)}
+.inner-time-chip .number{font-size:12px;color:#d0ddc8;margin-inline-start:5px}
+.setup-layout{display:grid;grid-template-columns:minmax(0,1fr) 275px;gap:20px;align-items:start}
+.panel{padding:24px;border:1px solid var(--line);border-radius:15px;background:var(--surface)}
+.panel-title{font-size:17px;font-weight:500;margin-bottom:4px}
+.panel-subtitle{font-size:11px;color:var(--muted);margin-bottom:20px}
+.mode-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.mode-choice{position:relative;display:flex;flex-direction:column;align-items:flex-start;text-align:right;padding:18px 15px;border:1px solid #344039;background:#11191d;border-radius:11px;min-height:163px;transition:.2s}
+.mode-choice .icon{width:26px;height:26px;color:#89a280;margin-bottom:17px}
+.mode-choice strong{font-size:14px;font-weight:500;margin-bottom:5px}
+.mode-choice small{font-size:10px;color:#899f8c;line-height:1.8}
+.choice-dot{position:absolute;left:12px;top:15px;width:15px;height:15px;border:1px solid #52674e;border-radius:50%;display:grid;place-items:center}
+.choice-dot .icon{width:10px;height:10px;opacity:0}
+.mode-choice.selected{background:#213020;border-color:#8eaf62}
+.mode-choice.selected .icon{color:var(--lime)}
+.mode-choice.selected .choice-dot{background:var(--lime);border-color:var(--lime);color:#23321c}
+.mode-choice.selected .choice-dot .icon{opacity:1}
+.difficulty-section{margin-top:27px;border-top:1px solid var(--line);padding-top:24px}
+.difficulty-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:15px}
+.difficulty-btn{border:1px solid #334136;border-radius:9px;padding:11px 8px;color:#a1b69f;font-size:12px;background:#111a1c}
+.difficulty-btn.selected{border-color:#839e5e;background:#263520;color:var(--lime)}
+.difficulty-btn small{display:block;color:#7f947e;font-size:9px;margin-top:4px}
+.difficulty-bars{display:inline-flex;gap:2px;align-items:flex-end;direction:ltr;margin-inline-end:6px;height:12px}
+.difficulty-bars i{display:block;width:3px;background:currentColor;border-radius:1px;opacity:.28}
+.difficulty-bars i:nth-child(1){height:5px}
+.difficulty-bars i:nth-child(2){height:8px}
+.difficulty-bars i:nth-child(3){height:11px}
+.difficulty-bars i.lit{opacity:1}
+.setup-hint{display:flex;align-items:flex-start;gap:8px;margin-top:18px;color:#8da58d;font-size:10px;line-height:1.9}
+.setup-hint .icon{width:15px;height:15px;margin-top:2px;flex-shrink:0;color:#b3ce99}
+.setup-summary{text-align:center}
+.summary-illustration{width:68px;height:68px;display:grid;place-items:center;border-radius:20px;margin:0 auto 15px}
+.summary-illustration .icon{width:35px;height:35px}
+.setup-summary h3{font-size:19px;font-weight:500}
+.setup-summary p{font-size:11px;color:#8fa38f;line-height:1.9;margin:8px 0 17px}
+.summary-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid #2a362d;text-align:right;font-size:11px}
+.summary-row span{color:#829981}
+.summary-row strong{font-weight:500;color:#c6d7be;font-size:11px}
+.setup-summary .btn{width:100%;margin-top:21px}
+.setup-summary .save-hint{font-size:9px;color:#758e76;display:flex;align-items:center;justify-content:center;gap:5px;margin:12px 0 0}
+.save-hint .icon{width:12px;height:12px}
+.game-toprow{display:flex;align-items:center;justify-content:space-between;gap:15px}
+.game-toprow h1{font-size:24px;font-weight:600}
+.game-toprow p{font-size:11px;color:#8fa38f;margin-top:3px}
+.game-controls{display:flex;align-items:center;gap:8px}
+.game-controls .btn{min-height:36px;padding:7px 12px;font-size:11px}
+.game-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:22px 0 17px}
+.game-metric{padding:13px 18px;background:var(--surface);border:1px solid var(--line);border-radius:11px;min-width:0}
+.metric-label{font-size:10px;color:#8ca18f;display:flex;align-items:center;gap:6px;margin-bottom:5px}
+.metric-label .icon{width:13px;height:13px}
+.metric-number{font-size:26px;font-weight:600;line-height:1.5}
+.score-metric .metric-number{color:var(--lime)}
+.metric-unit{font-size:11px;color:#6d866e;margin-inline-start:5px}
+.timer-urgent{color:var(--red)!important}
+.lives{display:flex;align-items:center;gap:6px;height:39px;color:#efaaa0}
+.lives .icon{width:22px;height:22px;fill:#efaaa028}
+.lives .lost{opacity:.2}
+.game-stage{position:relative;border:1px solid #304036;background:var(--surface);border-radius:17px;overflow:hidden;max-width:980px;margin:auto}
+.game-stage-head{display:flex;align-items:center;justify-content:space-between;padding:13px 22px;font-size:11px;color:#95a993;gap:10px}
+.game-stage-head span{display:flex;align-items:center;gap:6px}
+.game-stage-head .icon{width:14px;height:14px}
+.streak-tag{color:var(--lime)!important}
+.game-progress{height:3px;background:#28352b;overflow:hidden}
+.game-progress-fill{height:100%;width:100%;background:var(--lime);transition:width .25s linear,background .2s}
+.game-progress-fill.urgent{background:var(--red)}
+.question-content{padding:24px 27px 13px}
+.question-eyebrow{text-align:center;color:#769278;font-size:10px;margin-bottom:5px}
+.question-title{font-size:21px;text-align:center;font-weight:500;line-height:1.65}
+.question-media{height:191px;display:flex;align-items:center;justify-content:center;margin:14px 0 21px}
+.quiz-flag-frame{padding:11px;border:1px solid #39473b;background:#1b2823;border-radius:9px;box-shadow:0 12px 35px #0002}
+.quiz-flag-frame img{max-width:265px;max-height:155px;min-height:90px;object-fit:contain;box-shadow:0 4px 10px #0003;border-radius:2px}
+.country-question{text-align:center}
+.country-question .country-question-icon{width:43px;height:43px;border-radius:12px;display:grid;place-items:center;margin:0 auto 12px}
+.country-question h3{font-size:37px;line-height:1.7;font-weight:600}
+.country-question .country-english{font-family:var(--numbers);color:#728b78;font-size:10px;letter-spacing:1.6px}
+.question-country-row{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:8px}
+.question-country-row img{max-width:43px;max-height:30px;border-radius:3px}
+.answer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.answer-option{display:flex;align-items:center;gap:12px;text-align:right;min-height:56px;border:1px solid #36443b;background:#18221f;border-radius:9px;padding:11px 14px;transition:background .15s,border-color .15s;color:#d3dfcf;font-size:13px}
+.answer-option:hover:not(:disabled){border-color:#8daf68;background:#223222}
+.answer-number{display:grid;place-items:center;flex-shrink:0;width:26px;height:26px;font-size:11px;color:#809780;background:#233128;border:1px solid #354638;border-radius:6px}
+.answer-text{flex:1}
+.answer-result{width:18px;height:18px;flex-shrink:0}
+.answer-option.correct{border-color:#93c772;background:#273d25;color:#d4f4b9}
+.answer-option.correct .answer-number{background:#b8eb83;color:#22321e;border-color:#b8eb83}
+.answer-option.wrong{border-color:#b77670;background:#3e2827;color:#f2b1aa}
+.answer-option.wrong .answer-number{background:#634039;color:#f0b2aa;border-color:#83534a}
+.answer-option.dimmed{opacity:.47}
+.answer-feedback{min-height:46px;display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;font-size:12px;padding:11px 0 0;color:#97aa93;flex-wrap:wrap}
+.answer-feedback .icon{width:16px;height:16px;flex-shrink:0}
+.answer-feedback.good{color:var(--lime)}
+.answer-feedback.bad{color:#efb393}
+.next-question{font-size:10px;padding:4px 9px;border:1px solid #40533a;background:#263524;border-radius:5px;color:#c5dfa8;margin-inline-start:5px;white-space:nowrap}
+.game-stage-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #29392f;background:#121b18;padding:12px 22px;font-size:10px;color:#859e85}
+.game-stage-foot span{display:flex;align-items:center;gap:6px}
+.game-stage-foot .icon{width:13px;height:13px;color:#a0c489}
+.keyboard-hint{font-size:9px;color:#6b866c}
+kbd{font-family:var(--numbers);font-size:9px;border:1px solid #3b4c3b;border-radius:3px;padding:1px 4px;background:#1c2a1e}
+.game-category-time{display:flex;justify-content:center;margin-top:17px}
+.game-category-time .inner-time-chip{background:transparent;border-color:transparent}
+.pause-overlay{position:absolute;inset:0;z-index:6;background:#101913ed;backdrop-filter:blur(9px);display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
+.pause-icon{display:grid;place-items:center;width:67px;height:67px;border:1px solid #526d3d;background:#293e24;border-radius:20px;color:var(--lime);margin:0 auto 16px}
+.pause-icon .icon{width:31px;height:31px}
+.pause-overlay h3{font-size:24px;font-weight:500}
+.pause-overlay p{font-size:12px;color:#91ab8a;line-height:1.9;margin:10px 0 23px}
+.map-instruction{font-size:11px;color:#8aa087;text-align:center;margin:8px 0 4px}
+.map-box{position:relative;max-width:860px;aspect-ratio:16/10;margin:4px auto 9px;min-height:280px;overflow:hidden;border-radius:12px;background:#102028}
+.quiz-map{width:100%;height:100%;display:block;touch-action:none;cursor:grab;background:radial-gradient(circle at 30% 20%,#1a4660,#0c1c28 72%)}
+.quiz-map:active{cursor:grabbing}
+.quiz-map.is-answered{cursor:default}
+.country-shape{stroke:#102028;stroke-width:1;stroke-linejoin:round;cursor:pointer;vector-effect:non-scaling-stroke;transition:filter .16s,stroke .16s}
+.quiz-map:not(.is-answered) .country-shape:hover,.quiz-map:not(.is-answered) .country-shape:focus,.quiz-map:not(.is-answered) .island-dot:hover{filter:brightness(1.28);stroke:#f4fff0;stroke-width:1.8;outline:none}
+.country-shape.is-correct,.island-dot.is-correct{stroke:#d4f5a8;stroke-width:2.6}
+.country-shape.is-wrong,.island-dot.is-wrong{stroke:#ffb0a8;stroke-width:2.4}
+.country-label{font-family:var(--font);font-size:10px;font-weight:600;fill:#f7faf6;stroke:#0c1418;stroke-width:3.5px;paint-order:stroke;pointer-events:none;direction:rtl;unicode-bidi:plaintext}
+.country-label.is-correct-label{fill:#e4ffc4;font-size:12px;font-weight:700}
+.label-stem{stroke:#d5e0d4;stroke-width:1;pointer-events:none;opacity:.75}
+.island-dot{cursor:pointer;stroke:#081016;stroke-width:1.2}
+.map-controls{position:absolute;left:10px;top:16px;display:flex;flex-direction:column;gap:6px;z-index:2}
+.map-controls .icon-btn{width:31px;height:31px;background:#18261feb}
+.map-controls .icon-btn .icon{width:15px;height:15px}
+.map-legend{position:absolute;right:10px;bottom:8px;display:flex;align-items:center;gap:6px;font-size:9px;color:#c5ddd4;pointer-events:none;z-index:2}
+.map-legend i{display:block;width:8px;height:8px;border-radius:2px;background:linear-gradient(135deg,#e07a5f,#81b29a 40%,#f2cc8f 70%,#3d5a80)}
+.map-tip{font-size:9px;text-align:center;color:#647e6b;margin-bottom:5px}
+.map-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#9bb8ae;font-size:12px}
+.flag-fallback{display:inline-grid;place-items:center;min-width:64px;min-height:42px;padding:6px 8px;border-radius:4px;background:#24343a;color:#c5d7cc;font-family:var(--numbers);font-size:11px;letter-spacing:1px}
+.results-wrap{max-width:880px;margin:0 auto}
+.result-hero{position:relative;text-align:center;padding:35px 30px 28px;border:1px solid #3a5035;border-radius:18px;background:radial-gradient(ellipse at top,#293a2220,transparent 65%),var(--surface);overflow:hidden}
+.result-trophy{width:70px;height:70px;margin:0 auto 15px;display:grid;place-items:center;border:1px solid #64864a;background:#2a4125;border-radius:22px;color:var(--lime);transform:rotate(-5deg)}
+.result-trophy .icon{width:35px;height:35px;transform:rotate(5deg)}
+.result-kicker{color:#a2bf8b;font-size:10px;margin-bottom:7px}
+.result-hero h1{font-size:28px;font-weight:600;line-height:1.7}
+.result-subtitle{font-size:12px;color:#8da187;line-height:1.9;margin-top:4px}
+.result-score{margin:20px 0 3px;font-size:65px;font-weight:700;line-height:1.35;letter-spacing:-3px;color:var(--lime)}
+.result-score-label{font-size:12px;color:#9bb38e}
+.new-record{display:inline-flex;align-items:center;gap:6px;font-size:10px;border:1px solid #6c7040;border-radius:5px;background:#373c26;color:#dddc9b;padding:4px 9px;margin-top:12px}
+.new-record .icon{width:13px;height:13px}
+.result-stat-grid{display:grid;grid-template-columns:repeat(3,1fr);padding:20px 0;margin:23px 0 0;border-top:1px solid #30422f;border-bottom:1px solid #30422f}
+.result-stat{border-inline-end:1px solid #30422f}
+.result-stat:last-child{border:0}
+.result-stat .number{font-size:23px;font-weight:600}
+.result-stat small{display:block;font-size:10px;color:#8aa07f;margin-top:4px}
+.result-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:25px}
+.result-home{font-size:11px;color:#93ac85;margin-top:17px;text-decoration:underline;text-underline-offset:4px}
+.review-section{margin-top:27px}
+.review-list{border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
+.review-item{display:flex;align-items:center;gap:14px;padding:16px 20px;border-bottom:1px solid #2a392e}
+.review-item:last-child{border-bottom:0}
+.review-item img{width:42px;max-height:30px;object-fit:contain;border-radius:2px;flex-shrink:0}
+.review-item strong{font-size:12px;font-weight:500;display:block}
+.review-item small{display:block;font-size:10px;color:#ad837c;margin-top:3px}
+.review-correct{margin-inline-start:auto;text-align:left;color:#afd091;font-size:11px;max-width:45%}
+.review-correct small{color:#809777;font-size:9px;display:block}
+.perfect-message{display:flex;align-items:center;gap:14px;padding:22px;border:1px solid #405b36;background:#1c2c1d;border-radius:12px}
+.perfect-message .icon{width:30px;height:30px;color:var(--lime);flex-shrink:0}
+.perfect-message h3{font-size:16px;font-weight:500}
+.perfect-message p{font-size:11px;color:#93ae88;margin-top:4px}
+.history-section{margin-top:28px}
+.history-list{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.history-row{display:flex;align-items:center;gap:13px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.history-row:last-child{border-bottom:0}
+.history-row .stat-icon{margin:0}
+.history-details{flex:1}
+.history-details strong{font-weight:500;font-size:12px}
+.history-details small{display:block;font-size:9px;color:#819b87;margin-top:2px}
+.history-time{font-size:11px;color:#9bb094;display:flex;gap:6px;align-items:center;margin-inline-end:25px}
+.history-time .icon{width:13px;height:13px}
+.history-score{font-size:16px;color:var(--lime);font-weight:600}
+.history-score small{font-family:var(--font);font-size:9px;color:#779072;font-weight:400}
+dialog{border:1px solid #41503d;border-radius:17px;background:#17201c;color:var(--text);padding:0;max-width:500px;width:calc(100% - 32px);max-height:85dvh;overflow-y:auto;box-shadow:0 35px 100px #0008}
+dialog::backdrop{background:#060c09b8;backdrop-filter:blur(6px)}
+.modal-header{display:flex;align-items:center;justify-content:space-between;padding:20px 23px;border-bottom:1px solid #2e3e31}
+.modal-header h2{font-size:19px;font-weight:500}
+.modal-header .icon-btn{width:30px;height:30px;border-color:#3a4b38;background:#202d21}
+.modal-header .icon-btn .icon{width:16px;height:16px}
+.modal-content{padding:24px}
+.modal-content p{font-size:12px;color:#a1b599;line-height:2}
+.modal-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:24px;flex-wrap:wrap}
+.help-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:20px}
+.help-item:last-child{margin-bottom:0}
+.help-item .icon{width:22px;height:22px;color:var(--lime);margin-top:3px;flex-shrink:0}
+.help-item h3{font-weight:500;font-size:13px;margin-bottom:4px}
+.help-item p{font-size:11px;color:#9ab290;line-height:1.95}
+.help-note{border-top:1px solid #33462f;padding-top:17px;color:#7f9b77;font-size:10px;line-height:1.9;margin-top:18px}
+.detail-flag{height:154px;display:grid;place-items:center;background:radial-gradient(ellipse,#2e412956,transparent 70%);margin-bottom:10px}
+.detail-flag img{max-width:230px;max-height:134px;object-fit:contain;box-shadow:0 12px 35px #0003}
+.detail-name{text-align:center;font-size:27px;font-weight:600}
+.detail-english{text-align:center;display:block;font-size:11px;font-family:var(--numbers);color:#718d6b;margin:4px 0 24px}
+.detail-info{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.detail-info div{padding:14px;background:#1f2d20;border:1px solid #344c30;border-radius:9px}
+.detail-info small{font-size:10px;color:#8ea781;display:flex;align-items:center;gap:5px;margin-bottom:5px}
+.detail-info .icon{width:12px;height:12px}
+.detail-info strong{font-size:14px;font-weight:500}
+.country-note{font-size:10px!important;margin-top:17px;color:#95ad8a!important;line-height:1.9}
+.detail-actions{margin-top:22px;width:100%}
+.toast{position:fixed;bottom:25px;left:50%;transform:translate(-50%,20px);z-index:100;display:flex;align-items:center;gap:10px;padding:12px 20px;border:1px solid #5c7850;border-radius:10px;background:#273a26;color:#d1e9bc;box-shadow:0 15px 40px #0004;font-size:12px;opacity:0;pointer-events:none;transition:.25s;max-width:calc(100% - 30px);white-space:normal}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.toast .icon{width:17px;height:17px;color:var(--lime)}
+.sidebar-backdrop{display:none}
+.spin{animation:spin 1.2s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.confetti i{position:absolute;top:-15px;width:5px;height:10px;background:var(--lime);opacity:0;animation:confetti-fall 2.4s ease-in forwards}
+.confetti i:nth-child(3n){background:var(--purple)}
+.confetti i:nth-child(3n + 1){background:var(--orange)}
+@keyframes confetti-fall{0%{opacity:0;transform:translateY(-10px) rotate(0)}10%{opacity:.85}100%{opacity:0;transform:translateY(470px) rotate(370deg)}}
+@media(min-width:1550px){
+  main{padding-top:34px}
+  .hero{min-height:296px}
+  .hero-copy{padding:31px 36px}
+  .hero h2{font-size:39px}
+  .hero-art{min-height:296px}
+  .hero-globe{width:355px;height:355px}
+  .game-card{padding:22px}
+  .category-visual{height:85px}
+  .card-title{font-size:19px}
+}
+@media(max-width:1200px){
+  main{padding:25px}
+  .topbar{padding:0 25px}
+  .hero h2{font-size:30px}
+  .hero-copy{padding:26px}
+  .hero-art{min-height:280px}
+  .hero-globe{width:290px;height:290px}
+  .floating-flag{padding:6px 8px}
+  .flag-jp{right:6px;top:35px}
+  .flag-br{left:-1px;top:133px}
+  .flag-fr{right:45px}
+  .world-caption{left:10px;bottom:25px}
+  .hero-actions{gap:12px}
+  .hero-record{font-size:8px}
+  .hero-record strong{font-size:10px}
+  .stat-card{padding:13px}
+  .stat-icon{width:29px;height:29px}
+  .game-card{padding:15px}
+  .category-art{width:107px}
+  .mini-flags{transform:scale(.9);transform-origin:right center}
+  .card-top-label{font-size:7px}
+  .setup-layout{grid-template-columns:minmax(0,1fr) 240px;gap:16px}
+  .panel{padding:19px}
+  .mode-grid{gap:8px}
+  .mode-choice{padding:16px 11px}
+  .mode-choice strong{font-size:12px}
+  .mode-choice small{font-size:9px}
+  .preview-country{padding:16px 10px;gap:8px}
+  .preview-country img{width:33px;height:23px}
+  .preview-country strong{font-size:10px}
+  .preview-country small{font-size:8px}
+}
+@media(max-width:1100px){
+  .game-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .category-visual{height:81px}
+  .category-art{width:130px}
+  .mini-flags{transform:none}
+  .game-card{padding:21px}
+  .card-top-label{font-size:9px}
+  .card-title{font-size:19px}
+  .hero h2{font-size:28px}
+  .hero-description br{display:none}
+  .hero-record{display:none}
+  .hero-copy{padding:25px 23px}
+  .hero-art{min-height:282px}
+  .floating-flag strong{font-size:10px}
+  .floating-flag img{width:33px;height:23px}
+  .hero-globe{width:268px;height:268px}
+  .world-caption{display:none}
+  .flag-fr{right:32px;bottom:27px}
+  .flag-br{left:0;top:135px}
+  .intro-extra{font-size:9px}
+  .stat-label{font-size:9px}
+  .stat-icon{width:26px;height:26px}
+  .stat-value{font-size:25px}
+  .stat-note{font-size:8px}
+  .catalog-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .setup-layout{grid-template-columns:1fr}
+  .setup-summary{display:grid;grid-template-columns:1fr 1fr;gap:0 24px;align-items:center;text-align:right}
+  .summary-illustration{grid-row:1/3;margin:0;display:none}
+  .setup-summary h3{grid-column:1}
+  .setup-summary p{grid-column:1;margin-bottom:8px}
+  .setup-summary .summary-row{grid-column:2}
+  .setup-summary .summary-row:nth-of-type(2){grid-row:1}
+  .setup-summary .summary-row:nth-of-type(3){grid-row:2}
+  .setup-summary .summary-row:nth-of-type(4){grid-row:3}
+  .setup-summary .btn{grid-column:1;grid-row:3;margin:8px 0}
+  .setup-summary .save-hint{grid-column:1;justify-content:flex-start}
+  .mode-choice strong{font-size:14px}
+  .mode-choice small{font-size:11px}
+  .mode-choice{min-height:162px;padding:20px}
+  .preview-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .preview-country:nth-child(3){border-inline-end:0}
+  .preview-country:nth-child(n+4){display:none}
+  .preview-country img{width:40px;height:28px}
+  .preview-country strong{font-size:11px}
+  .preview-country small{font-size:9px}
+}
+@media(max-width:900px){
+  .sidebar{transform:translateX(100%);transition:transform .25s}
+  .sidebar.open{transform:translateX(0)}
+  .sidebar-backdrop.open{display:block;position:fixed;inset:0;z-index:35;background:#030908a6;backdrop-filter:blur(3px)}
+  .app-shell{margin-right:0}
+  .mobile-menu{display:grid}
+  .topbar{height:69px}
+  .intro h1{font-size:28px}
+  .hero{grid-template-columns:1.1fr 1fr}
+  .hero h2{font-size:34px}
+  .hero-art{min-height:281px}
+  .hero-globe{width:300px;height:300px}
+  .hero-copy{padding:27px}
+  .hero-description br{display:block}
+  .hero-record{display:block}
+  .flag-jp{right:14px;top:27px}
+  .flag-br{left:2px;top:133px}
+  .flag-fr{right:51px;bottom:20px}
+  .floating-flag img{width:39px;height:26px}
+  .world-caption{display:flex;left:16px;bottom:25px}
+  .stat-label{font-size:11px}
+  .stat-value{font-size:28px}
+  .stat-note{font-size:9px}
+  .stat-icon{width:33px;height:33px}
+  .game-card{padding:21px}
+  .category-visual{height:79px}
+  .game-grid{gap:16px}
+  .sidebar-bottom{padding-top:20px}
+  .nav-caption{margin-top:16px}
+}
+@media(max-width:680px){
+  main{padding:22px 18px}
+  .topbar{padding:0 18px;gap:10px}
+  .breadcrumb{font-size:10px;gap:7px}
+  .breadcrumb-label,.breadcrumb .slash,.breadcrumb .icon{display:none}
+  .topbar-actions{gap:7px}
+  .top-search{display:none}
+  .avatar{margin-inline-start:1px;width:30px;height:30px;font-size:15px}
+  .top-timer{padding:5px 8px;gap:7px;min-height:36px}
+  .top-timer small{font-size:8px}
+  .top-timer .number{font-size:10px}
+  .top-timer .icon{width:16px;height:16px}
+  .icon-btn{width:33px;height:33px}
+  .intro{margin-bottom:18px;gap:10px}
+  .intro h1{font-size:26px}
+  .intro p{font-size:11px;max-width:330px}
+  .intro-extra{display:none}
+  .hero{min-height:280px;display:block}
+  .hero-copy{padding:25px 23px;width:68%;min-height:280px}
+  .hero h2{font-size:29px;line-height:1.55;margin-top:13px}
+  .hero-description{font-size:10px;max-width:255px}
+  .hero-description br{display:none}
+  .hero-art{position:absolute;left:-28px;top:10px;width:230px;height:260px;min-height:0;z-index:1}
+  .hero-globe{width:220px;height:220px}
+  .floating-flag{padding:5px 7px}
+  .floating-flag img{width:30px;height:21px}
+  .floating-flag strong{font-size:9px}
+  .floating-flag small{font-size:7px}
+  .flag-jp{right:32px;top:25px}
+  .flag-br{left:8px;top:128px}
+  .flag-fr{right:49px;bottom:18px}
+  .orbit-sparkle{left:37px;top:23px}
+  .world-caption{display:none}
+  .hero-record{display:none}
+  .hero-actions{margin-top:19px}
+  .hero-actions .btn{font-size:11px;padding:9px 13px;min-height:40px}
+  .hero-eyebrow{font-size:9px;gap:7px}
+  .hero-label{font-size:9px;padding:2px 6px}
+  .stat-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin:15px 0 24px}
+  .stat-card{padding:13px 16px;min-height:91px}
+  .stat-label{font-size:10px}
+  .stat-value{font-size:27px}
+  .stat-note{font-size:9px}
+  .section-head{margin-bottom:14px}
+  .section-head h2{font-size:19px}
+  .section-head p{font-size:10px}
+  .section-aside{font-size:9px}
+  .game-grid{gap:12px}
+  .game-card{padding:17px 15px 13px}
+  .category-visual{height:72px;margin-bottom:12px}
+  .category-art{width:115px;height:70px}
+  .card-title{font-size:17px}
+  .card-description{font-size:10px}
+  .card-tags{gap:4px;margin:12px 0}
+  .card-tags span{font-size:8px;padding:2px 5px}
+  .card-top-label{font-size:7px;padding:2px 5px}
+  .mini-flags{transform:scale(.86);transform-origin:right center}
+  .category-time{font-size:9px;gap:4px}
+  .category-time .number{font-size:9px}
+  .card-footer{padding-top:9px}
+  .index-preview{margin-top:26px}
+  .preview-country{padding:14px 10px;gap:8px}
+  .preview-country img{width:32px;height:23px}
+  .preview-country strong{font-size:10px}
+  .preview-country small{font-size:8px}
+  .text-link{font-size:10px}
+  .main-footer{font-size:8px;align-items:flex-start;gap:15px;margin-top:25px}
+  .footer-left{max-width:145px}
+  .page-heading{align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+  .page-heading h1{font-size:25px}
+  .page-heading p{font-size:11px}
+  .heading-icon{width:45px;height:45px;border-radius:12px}
+  .heading-icon .icon{width:23px;height:23px}
+  .heading-group{gap:11px}
+  .inner-time-chip{font-size:9px;padding:6px 10px}
+  .inner-time-chip .number{font-size:10px}
+  .catalog-toolbar{padding:14px}
+  .search-row{flex-wrap:wrap;gap:9px}
+  .search-box{flex-basis:100%}
+  .search-box input{font-size:11px}
+  .sort-select{flex:1;max-width:none;min-height:36px;font-size:10px}
+  .view-switch{padding:2px}
+  .view-switch button{padding:7px}
+  .continent-filters{gap:6px;margin-top:12px}
+  .filter-chip{padding:5px 8px;font-size:9px;gap:5px}
+  .filter-chip .number{font-size:8px}
+  .catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+  .country-card{padding:14px 10px}
+  .country-flag-box{height:80px}
+  .country-flag-box img{max-width:91px;max-height:59px}
+  .country-meta strong{font-size:12px}
+  .country-meta small{font-size:10px}
+  .catalog-meta{font-size:9px}
+  .country-note{font-size:9px!important}
+  .mode-grid{gap:9px}
+  .mode-choice{padding:16px 10px;min-height:170px}
+  .mode-choice strong{font-size:12px}
+  .mode-choice small{font-size:9px}
+  .mode-choice .icon{width:23px;height:23px;margin-bottom:16px}
+  .choice-dot{left:9px;top:15px;width:13px;height:13px}
+  .panel{padding:18px}
+  .panel-title{font-size:16px}
+  .panel-subtitle{font-size:10px}
+  .difficulty-btn{font-size:11px;padding:11px 6px}
+  .difficulty-btn small{font-size:8px}
+  .difficulty-options{gap:7px}
+  .setup-summary{gap:0 16px}
+  .setup-summary h3{font-size:17px}
+  .setup-summary p{font-size:10px}
+  .summary-row{font-size:10px;padding:9px 0}
+  .summary-row strong{font-size:10px}
+  .setup-summary .btn{font-size:11px;padding:10px}
+  .setup-summary .save-hint{font-size:8px}
+  .game-toprow h1{font-size:21px}
+  .game-toprow p{font-size:10px}
+  .game-controls .btn{font-size:10px;padding:7px 9px;gap:5px}
+  .game-controls .btn .icon{width:14px;height:14px}
+  .game-controls .quit-label{display:none}
+  .game-metrics{gap:8px;margin:19px 0 14px}
+  .game-metric{padding:11px 10px;border-radius:9px}
+  .metric-label{font-size:8px;gap:4px}
+  .metric-label .icon{width:11px;height:11px}
+  .metric-number{font-size:21px}
+  .metric-unit{font-size:9px;margin-inline-start:3px}
+  .lives{gap:2px;height:31px}
+  .lives .icon{width:17px;height:17px}
+  .game-stage-head{padding:12px 15px;font-size:9px}
+  .question-content{padding:22px 17px 12px}
+  .question-title{font-size:19px}
+  .question-media{height:173px;margin:14px 0 23px}
+  .quiz-flag-frame img{max-width:235px;max-height:137px}
+  .answer-grid{gap:9px}
+  .answer-option{font-size:11px;min-height:56px;padding:10px;gap:8px}
+  .answer-number{width:23px;height:23px;font-size:10px}
+  .answer-feedback{font-size:10px;min-height:45px}
+  .answer-feedback .icon{width:14px;height:14px}
+  .answer-result{width:15px;height:15px}
+  .game-stage-foot{font-size:9px;padding:12px 16px}
+  .keyboard-hint{display:none!important}
+  .country-question h3{font-size:31px}
+  .map-box{min-height:250px;aspect-ratio:1.35}
+  .map-controls{left:6px;top:10px}
+  .map-controls .icon-btn{width:28px;height:28px}
+  .map-legend{font-size:8px;right:6px;bottom:5px}
+  .map-tip{font-size:8px}
+  .map-instruction{font-size:10px}
+  .country-label{font-size:8px}
+  .result-hero{padding:28px 18px 23px}
+  .result-hero h1{font-size:23px}
+  .result-subtitle{font-size:11px}
+  .result-score{font-size:57px}
+  .result-stat .number{font-size:20px}
+  .result-stat small{font-size:9px}
+  .result-actions{gap:8px}
+  .result-actions .btn{font-size:11px;padding:10px 13px}
+  .review-item{padding:14px;gap:10px}
+  .review-item img{width:32px}
+  .review-item strong{font-size:11px}
+  .review-item small{font-size:9px}
+  .review-correct{font-size:10px}
+  .history-time{margin-inline-end:5px;font-size:10px}
+  .history-row{padding:12px;gap:9px}
+  .history-details strong{font-size:11px}
+  .history-score{font-size:14px}
+  .modal-content{padding:21px}
+  .modal-header{padding:17px 21px}
+  .modal-header h2{font-size:18px}
+  .toast{font-size:11px;padding:11px 15px;bottom:17px}
+}
+@media(max-width:420px){
+  main{padding:19px 14px}
+  .topbar{padding:0 14px;gap:7px}
+  .topbar-actions{gap:6px}
+  .breadcrumb-current{font-size:9px}
+  .avatar{display:none}
+  .intro h1{font-size:25px}
+  .intro p{font-size:10px}
+  .hero{min-height:278px}
+  .hero-copy{width:77%;padding:24px 19px;min-height:278px}
+  .hero h2{font-size:27px}
+  .hero-description{max-width:214px}
+  .hero-art{left:-67px;top:8px;width:228px;opacity:.85}
+  .hero-globe{width:196px;height:196px}
+  .flag-jp{right:30px;top:27px}
+  .flag-fr{right:57px;bottom:21px}
+  .flag-br{left:5px;top:122px}
+  .floating-flag strong,.floating-flag small{display:none}
+  .floating-flag{padding:6px}
+  .hero-eyebrow{font-size:8px}
+  .hero-actions .btn{padding:9px 12px;font-size:11px}
+  .stat-card{padding:12px;min-height:87px}
+  .stat-icon{width:28px;height:28px}
+  .stat-label{font-size:9px}
+  .stat-note{font-size:8px}
+  .stat-value{font-size:25px}
+  .game-card{padding:15px 12px 12px}
+  .card-title{font-size:16px}
+  .card-description{font-size:9px}
+  .card-top-label{display:none}
+  .category-art{width:103px}
+  .mini-flags{transform:scale(.79)}
+  .category-visual{height:67px}
+  .card-tags span{font-size:7px}
+  .category-time{gap:3px;font-size:8px}
+  .category-time .number{font-size:8px}
+  .card-arrow{width:24px;height:24px}
+  .preview-grid{grid-template-columns:1fr 1fr}
+  .preview-country:nth-child(3){display:none}
+  .preview-country:nth-child(2){border-inline-end:0}
+  .section-aside{font-size:8px}
+  .section-head h2{font-size:18px}
+  .section-head p{font-size:9px}
+  .text-link{font-size:9px;gap:4px}
+  .mode-grid{grid-template-columns:1fr}
+  .mode-choice{min-height:0;padding:16px 50px 16px 30px}
+  .mode-choice .icon{position:absolute;right:16px;top:21px;margin:0;width:23px;height:23px}
+  .mode-choice strong{font-size:13px}
+  .mode-choice small{font-size:10px}
+  .choice-dot{top:25px;left:14px}
+  .setup-summary{display:block;text-align:center}
+  .setup-summary p{margin-bottom:15px}
+  .setup-summary .btn{margin-top:18px}
+  .setup-summary .save-hint{justify-content:center}
+  .game-metric{padding:9px 8px}
+  .metric-label{font-size:7px}
+  .metric-number{font-size:19px}
+  .metric-label .icon{display:none}
+  .answer-option{font-size:10px;padding:9px;gap:7px}
+  .answer-number{width:21px;height:21px}
+  .question-content{padding:20px 13px 12px}
+  .quiz-flag-frame img{max-width:210px}
+  .game-stage-head{font-size:8px}
+  .game-toprow h1{font-size:20px}
+  .game-toprow p{font-size:9px}
+  .review-correct{max-width:40%}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" aria-hidden="true" style="position:absolute;overflow:hidden">
+<defs>
+<symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m16 8-2.5 5.5L8 16l2.5-5.5L16 8Z"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2"/></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10Z"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5c-3-2-7-2-10-1v15c3-1 7-1 10 1 3-2 7-2 10-1V4c-3-1-7-1-10 1Zm0 0v15M5 8h3M5 12h3m8-4h3m-3 4h3"/></symbol>
+<symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V3m0 1c5-4 9 4 15 0v11c-6 4-10-4-15 0"/></symbol>
+<symbol id="i-building" viewBox="0 0 24 24"><path d="M3 21h18M5 21V9l7-5 7 5v12M3 9h18M8 12v6m4-6v6m4-6v6M12 4V2"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18M5 7h14M5 17h14"/></symbol>
+<symbol id="i-map" viewBox="0 0 24 24"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Zm6-3v15m6-12v15"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="i-timer" viewBox="0 0 24 24"><circle cx="12" cy="14" r="8"/><path d="M9 2h6m-3 0v4m6 2 2-2m-8 5v4l2 1"/></symbol>
+<symbol id="i-trophy" viewBox="0 0 24 24"><path d="M7 3h10v6a5 5 0 0 1-10 0V3Zm0 2H3v3a4 4 0 0 0 4 4m10-7h4v3a4 4 0 0 1-4 4M12 14v5m-4 2h8m-7-2h6v2H9v-2Z"/></symbol>
+<symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M20 12H4m6-6-6 6 6 6"/></symbol>
+<symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="m14 6-6 6 6 6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+<symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+<symbol id="i-zap" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-13h-7l1-7Z"/></symbol>
+<symbol id="i-sound" viewBox="0 0 24 24"><path d="m11 4-6 5H2v6h3l6 5V4Zm4 4a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+<symbol id="i-mute" viewBox="0 0 24 24"><path d="m11 4-6 5H2v6h3l6 5V4Zm5 5 6 6m0-6-6 6"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8V4Z"/></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><path d="M7 4h3v16H7V4Zm7 0h3v16h-3V4Z"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+<symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 4.4 1.6c-1.2.8-1.9 1.1-1.9 2.9m0 2.5v.5"/></symbol>
+<symbol id="i-sparkle" viewBox="0 0 24 24"><path d="m12 3 2.7 6.3L21 12l-6.3 2.7L12 21l-2.7-6.3L3 12l6.3-2.7L12 3ZM20 2v4m-2-2h4"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.3"/><rect x="14" y="3" width="7" height="7" rx="1.3"/><rect x="3" y="14" width="7" height="7" rx="1.3"/><rect x="14" y="14" width="7" height="7" rx="1.3"/></symbol>
+<symbol id="i-list" viewBox="0 0 24 24"><path d="M9 5h12M9 12h12M9 19h12M3 5h1m-1 7h1m-1 7h1"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 10 5-10 5L2 8l10-5ZM2 12l10 5 10-5M2 16l10 5 10-5"/></symbol>
+<symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7a8 8 0 1 0 .5 9M20 3v5h-5"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 2 8 3v6c0 6-8 11-8 11S4 17 4 11V5l8-3Z"/><path d="m8 11 3 3 5-6"/></symbol>
+<symbol id="i-exit" viewBox="0 0 24 24"><path d="M9 4H4v16h5m4-8h8m-4-4 4 4-4 4M9 8v8"/></symbol>
+</defs>
+</svg>
+<a class="skip-link" href="#mainContent">انتقل للمحتوى</a>
+<div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+<aside class="sidebar" id="sidebar" aria-label="القائمة الرئيسية">
+<button class="brand" type="button" data-nav="home" aria-label="رحّال — الرئيسية">
+<span class="brand-logo"><svg class="icon"><use href="#i-compass"></use></svg></span>
+<span><span class="brand-name">رحّال</span><span class="brand-tagline">اكتشف. خمّن. تعلّم.</span></span>
+</button>
+<nav aria-label="تصفّح رحّال">
+<button class="nav-item active" type="button" data-nav="home" aria-current="page"><svg class="icon"><use href="#i-home"></use></svg><span>الرئيسية</span></button>
+<button class="nav-item" type="button" data-nav="catalog"><svg class="icon"><use href="#i-book"></use></svg><span>فهرس الدول</span><span class="nav-count" data-country-count>0</span></button>
+<div class="nav-separator"></div>
+<div class="nav-caption">العالم ملعبك</div>
+<button class="nav-item" type="button" data-category="flags"><svg class="icon"><use href="#i-flag"></use></svg><span>تحدّي الأعلام</span></button>
+<button class="nav-item" type="button" data-category="capitals"><svg class="icon"><use href="#i-building"></use></svg><span>تحدّي العواصم</span></button>
+<button class="nav-item" type="button" data-category="continents"><svg class="icon"><use href="#i-globe"></use></svg><span>تحدّي القارات</span></button>
+<button class="nav-item" type="button" data-category="map"><svg class="icon"><use href="#i-map"></use></svg><span>تحدّي الخريطة</span></button>
+</nav>
+<div class="sidebar-bottom">
+<div class="passport">
+<div class="passport-top"><span class="passport-icon"><svg class="icon"><use href="#i-compass"></use></svg></span><div><strong id="rankLabel">مستكشف مبتدئ</strong><small>جواز سفرك إلى المعرفة</small></div></div>
+<div class="passport-progress"><span id="discoveryProgress"></span></div>
+<div class="passport-bottom"><span>دول وجزر اكتشفتها</span><span class="number"><span data-stat="discovered">0</span> / <span data-country-count>0</span></span></div>
+</div>
+<button class="nav-item sidebar-help" type="button" data-help><svg class="icon"><use href="#i-help"></use></svg><span>شلون ألعب؟</span></button>
+<div class="sidebar-foot"><svg class="icon"><use href="#i-heart"></use></svg><span>صُنع لفضولك، بلا حدود.</span></div>
+</div>
+</aside>
+<div class="app-shell">
+<header class="topbar">
+<button class="icon-btn mobile-menu" id="mobileMenu" type="button" aria-label="فتح القائمة" aria-expanded="false"><svg class="icon"><use href="#i-menu"></use></svg></button>
+<div class="breadcrumb"><svg class="icon"><use href="#i-compass"></use></svg><span class="breadcrumb-label">مساحة اللعب</span><span class="slash">/</span><span class="breadcrumb-current" id="breadcrumbCurrent">الرئيسية</span></div>
+<div class="topbar-actions">
+<div class="top-timer" title="مجموع وقت اللعب الفعلي، محفوظ على هذا الجهاز"><svg class="icon"><use href="#i-clock"></use></svg><div><small>وقت اللعب الكلّي</small><span class="number" data-total-time>00:00:00</span></div></div>
+<button class="icon-btn top-search" id="topSearch" type="button" aria-label="ابحث في فهرس الدول"><svg class="icon"><use href="#i-search"></use></svg></button>
+<button class="icon-btn" id="soundButton" type="button" aria-label="تفعيل المؤثرات الصوتية" aria-pressed="false"><svg class="icon"><use href="#i-mute"></use></svg></button>
+<div class="avatar" title="مستكشف رحّال — بياناتك محفوظة محليًا" aria-label="ملف المستكشف المحلي">ر</div>
+</div>
+</header>
+<main id="mainContent">
+<section class="page" id="homePage" aria-labelledby="homeTitle">
+<div class="intro">
+<div><h1 id="homeTitle">جاهز تلفّ العالم؟</h1><p>كل علم حكاية، وكل تحدّي رحلة جديدة. الكرة صارت دولًا، وكل دولة بلون.</p></div>
+<span class="intro-extra"><svg class="icon"><use href="#i-sparkle"></use></svg>كل الدول والجزر، بلا استبعاد.</span>
+</div>
+<section class="hero" aria-label="كرة العالم وتحدّي الدقيقة">
+<div class="hero-copy">
+<div class="hero-eyebrow"><span class="hero-label"><svg class="icon"><use href="#i-zap"></use></svg>التحدّي السريع</span><span>60 ثانية فقط</span></div>
+<h2>دقيقة واحدة.<br><span>العالم كلّه قدّامك.</span></h2>
+<p class="hero-description">خمّن أكبر عدد من الأعلام قبل ما يخلص الوقت.<br>ركّز، جاوب، واكسر رقمك القياسي.</p>
+<div class="hero-actions">
+<button class="btn btn-primary" type="button" data-quick>يلا، نبدأ التحدّي<svg class="icon"><use href="#i-arrow-left"></use></svg></button>
+<div class="hero-record"><span><svg class="icon"><use href="#i-trophy"></use></svg>أفضل نتيجة لك</span><strong><span class="number" data-flags-best>0</span> إجابات صحيحة</strong></div>
+</div>
+</div>
+<div class="hero-art">
+<div class="planet-glow"></div>
+<div class="hero-globe" id="heroGlobe">
+<canvas id="globeCanvas" width="720" height="720" aria-label="كرة أرضية تفاعلية. كل دولة بلون مختلف. اسحب للتدوير، واستخدم الأسهم، واضغط أي دولة لفتح بطاقتها."></canvas>
+<div class="globe-tip" id="globeTip" hidden></div>
+</div>
+<p class="sr-only">الكرة تعرض دول العالم وجزره، كل واحد بلون ثابت مختلف. مرّر أو اضغط لمعرفة الاسم.</p>
+<button class="floating-flag flag-jp" type="button" data-country="jp"><img src="https://flagcdn.com/w80/jp.png" data-flag-code="jp" alt=""><span><strong>اليابان</strong><small>محطة جديدة؟</small></span></button>
+<button class="floating-flag flag-br" type="button" data-country="br"><img src="https://flagcdn.com/w80/br.png" data-flag-code="br" alt=""><span><strong>البرازيل</strong><small>تعرف عاصمتها؟</small></span></button>
+<button class="floating-flag flag-fr" type="button" data-country="fr"><img src="https://flagcdn.com/w80/fr.png" data-flag-code="fr" alt=""><span><strong>فرنسا</strong><small>العالم أقرب.</small></span></button>
+<span class="orbit-sparkle" aria-hidden="true"><svg class="icon"><use href="#i-sparkle"></use></svg></span>
+<span class="world-caption"><svg class="icon"><use href="#i-pin"></use></svg>كل دولة بلون مختلف</span>
+</div>
+</section>
+<div class="stat-grid">
+<div class="stat-card"><div><span class="stat-label">دولة وجزيرة</span><strong class="stat-value number" data-country-count>0</strong><small class="stat-note">لكل واحد علم وحكاية</small></div><span class="stat-icon green"><svg class="icon"><use href="#i-globe"></use></svg></span></div>
+<div class="stat-card"><div><span class="stat-label">قارات تستكشفها</span><strong class="stat-value number">6</strong><small class="stat-note">القارة كاملة على الخريطة</small></div><span class="stat-icon cyan"><svg class="icon"><use href="#i-map"></use></svg></span></div>
+<div class="stat-card"><div><span class="stat-label">تحديات أكملتها</span><strong class="stat-value number" data-stat="completed">0</strong><small class="stat-note" id="completedNote">رحلتك تبدأ بخطوة</small></div><span class="stat-icon purple"><svg class="icon"><use href="#i-target"></use></svg></span></div>
+<div class="stat-card"><div><span class="stat-label">أفضل سكور</span><strong class="stat-value number" data-stat="best">0</strong><small class="stat-note">في تحدّي الدقيقة</small></div><span class="stat-icon orange"><svg class="icon"><use href="#i-trophy"></use></svg></span></div>
+</div>
+<section aria-labelledby="challengesTitle">
+<div class="section-head">
+<div><h2 id="challengesTitle">اختَر تحدّيك</h2><p>أربع طرق، والبنك واحد: كل الدول والجزر.</p></div>
+<span class="section-aside"><svg class="icon"><use href="#i-grid"></use></svg>4 عوالم من المتعة</span>
+</div>
+<div class="game-grid">
+<button class="game-card flags-card" type="button" data-category="flags">
+<span class="category-visual"><span class="mini-flags"><img src="https://flagcdn.com/w160/de.png" data-flag-code="de" alt="علم ألمانيا"><img src="https://flagcdn.com/w160/jp.png" data-flag-code="jp" alt="علم اليابان"><img src="https://flagcdn.com/w160/br.png" data-flag-code="br" alt="علم البرازيل"></span><span class="card-top-label">ابدأ من هنا</span></span>
+<span class="card-title">تحدّي الأعلام</span>
+<span class="card-description">شوف العلم، واعرف الدولة أو الجزيرة.</span>
+<span class="card-tags"><span>كل الأعلام</span><span>3 مستويات</span></span>
+<span class="card-footer"><span class="category-time"><svg class="icon"><use href="#i-clock"></use></svg>لعبت <span class="number" data-category-time="flags">00:00</span></span><span class="card-arrow"><svg class="icon"><use href="#i-arrow-left"></use></svg></span></span>
+</button>
+<button class="game-card capitals-card" type="button" data-category="capitals">
+<span class="category-visual"><svg class="category-art" viewBox="0 0 140 85" fill="none" aria-hidden="true"><ellipse cx="70" cy="73" rx="63" ry="8" fill="#b6a1ee" opacity=".06"/><path d="M4 74h131" stroke="#8270a1" opacity=".4"/><path d="M48 73 62 33l4-24 4 24 14 40M61 34h10M57 45h19M53 59h27M60 73v-9a6 6 0 0 1 12 0v9" stroke="#b6a1ee" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M61 19h10M66 4v5" stroke="#d3c0ff" stroke-width="1.5"/><path d="M16 73V40l12-7 12 7v33M22 48h3m6 0h3m-12 8h3m6 0h3m-9 9h6v8M92 73V35h25v38M97 35v-9h15v9m-12-9v-7h9v7m-10 17h12m-12 8h12m-12 8h12m-9 7h6v7" stroke="#87779f" stroke-width="1.4"/><path d="M121 19h8m-4-4v8M39 16h5m-2.5-2.5v5" stroke="#aa98cf" stroke-width="1.2"/><circle cx="24" cy="19" r="2" fill="#b6a1ee" opacity=".5"/></svg></span>
+<span class="card-title">تحدّي العواصم</span>
+<span class="card-description">كل دولة وجزيرة… وعاصمتها شنو؟</span>
+<span class="card-tags"><span>كل العواصم</span><span>3 مستويات</span></span>
+<span class="card-footer"><span class="category-time"><svg class="icon"><use href="#i-clock"></use></svg>لعبت <span class="number" data-category-time="capitals">00:00</span></span><span class="card-arrow"><svg class="icon"><use href="#i-arrow-left"></use></svg></span></span>
+</button>
+<button class="game-card continents-card" type="button" data-category="continents">
+<span class="category-visual"><svg class="category-art" viewBox="0 0 140 85" fill="none" aria-hidden="true"><circle cx="66" cy="41" r="31" fill="#81cbd7" opacity=".06"/><circle cx="66" cy="41" r="31" stroke="#76b8c6" stroke-width="1.1"/><ellipse cx="66" cy="41" rx="14" ry="31" stroke="#507986" stroke-width=".75"/><ellipse cx="66" cy="41" rx="31" ry="12" stroke="#507986" stroke-width=".75"/><path d="M36 41h60M66 10v62" stroke="#507986" stroke-width=".75"/><path d="m45 19 6-2 8 6-2 9-8 2-3 9-7-6-1-9 7-9Zm14 27 10-6 9 4 3 9-5 4-6 14-6-5-2-13-3-7Zm21-26 10 8 5 15-9 2-6-8-8 1-5-9 7-5 6-4Z" fill="#538d96" stroke="#8dccd4" stroke-width=".7"/><ellipse cx="66" cy="41" rx="55" ry="14" transform="rotate(-24 66 41)" stroke="#6caab9" stroke-width=".8" stroke-dasharray="3 4" opacity=".55"/><circle cx="111" cy="20" r="4" fill="#81cbd7"/><circle cx="19" cy="62" r="2.5" fill="#81cbd7" opacity=".6"/></svg></span>
+<span class="card-title">تحدّي القارات</span>
+<span class="card-description">دولة أو جزيرة وأربع قارات. وين مكانها؟</span>
+<span class="card-tags"><span>6 قارات</span><span>الكل داخل</span></span>
+<span class="card-footer"><span class="category-time"><svg class="icon"><use href="#i-clock"></use></svg>لعبت <span class="number" data-category-time="continents">00:00</span></span><span class="card-arrow"><svg class="icon"><use href="#i-arrow-left"></use></svg></span></span>
+</button>
+<button class="game-card map-card" type="button" data-category="map">
+<span class="category-visual"><svg class="category-art" viewBox="0 0 140 85" fill="none" aria-hidden="true"><circle cx="66" cy="42" r="32" stroke="#916e45" stroke-width=".8" stroke-dasharray="3 4" opacity=".6"/><path d="m17 29 24-10 26 9 28-11 25 10v43L94 79 67 69 42 79l-25-9V29Z" fill="#eab57e" fill-opacity=".04" stroke="#8c6c4d" stroke-width="1"/><path d="M42 20v59m25-51v41m28-51v61" stroke="#9b7954" stroke-width="1"/><path d="m20 42 14-5 8 6 10-6 14 7 11-5 11 4 7-7 12 4 12-5M21 60l12-4 9 5 11-4 13 5 12-6 10 3 7-6 10 5 14-5" stroke="#9b7954" stroke-width=".7" opacity=".7"/><path d="M84 28c0 9-13 21-13 21S58 37 58 28a13 13 0 0 1 26 0Z" fill="#5c4430" stroke="#eab57e" stroke-width="1.5"/><circle cx="71" cy="28" r="4" fill="#eab57e"/><path d="m102 60 9 2-6 7-1-4-4-1 2-4Z" fill="#eab57e"/></svg></span>
+<span class="card-title">تحدّي الخريطة</span>
+<span class="card-description">القارة كاملة قدامك. اضغط الدولة، والجزر وياها.</span>
+<span class="card-tags"><span>قارة كاملة</span><span>كل الدول والجزر</span></span>
+<span class="card-footer"><span class="category-time"><svg class="icon"><use href="#i-clock"></use></svg>لعبت <span class="number" data-category-time="map">00:00</span></span><span class="card-arrow"><svg class="icon"><use href="#i-arrow-left"></use></svg></span></span>
+</button>
+</div>
+</section>
+<section class="index-preview" aria-labelledby="indexPreviewTitle">
+<div class="section-head"><div><h2 id="indexPreviewTitle">العالم في مكان واحد</h2><p>تعرّف على الدول والجزر قبل ما تتحدّاها.</p></div><button class="text-link" type="button" data-nav="catalog">استعرض فهرس الدول<svg class="icon"><use href="#i-arrow-left"></use></svg></button></div>
+<div class="preview-grid" id="countryPreview"></div>
+</section>
+<section class="history-section" id="recentHistory" hidden></section>
+</section>
+<section class="page" id="catalogPage" hidden aria-label="فهرس الدول"></section>
+<section class="page" id="setupPage" hidden aria-label="إعداد التحدّي"></section>
+<section class="page" id="gamePage" hidden aria-label="ساحة التحدّي"></section>
+<section class="page" id="resultsPage" hidden aria-label="نتيجة التحدّي"></section>
+<footer class="main-footer">
+<span class="footer-right"><svg class="icon"><use href="#i-compass"></use></svg>رحّال — العالم أقرب ممّا تتخيّل.</span>
+<span class="footer-left"><span class="live-dot"></span>تقدّمك محفوظ على هذا الجهاز</span>
+</footer>
+</main>
+</div>
+<dialog id="appDialog" aria-labelledby="dialogTitle"></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"><svg class="icon"><use href="#i-check-circle"></use></svg><span id="toastText"></span></div>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+<script>
+'use strict';
+const COUNTRY_DATA = `af|4|أفغانستان|كابول|AS|2
+am|51|أرمينيا|يريفان|AS|2
+az|31|أذربيجان|باكو|AS|2
+bh|48|البحرين|المنامة|AS|1
+bd|50|بنغلاديش|دكا|AS|2
+bt|64|بوتان|تيمفو|AS|3
+bn|96|بروناي|بندر سري بكاوان|AS|3
+kh|116|كمبوديا|بنوم بنه|AS|2
+cn|156|الصين|بكين|AS|1
+cy|196|قبرص|نيقوسيا|AS|2
+ge|268|جورجيا|تبليسي|AS|2
+in|356|الهند|نيودلهي|AS|1
+id|360|إندونيسيا|جاكرتا|AS|1
+ir|364|إيران|طهران|AS|1
+iq|368|العراق|بغداد|AS|1
+il|376|إسرائيل|القدس|AS|2
+jp|392|اليابان|طوكيو|AS|1
+jo|400|الأردن|عمّان|AS|1
+kz|398|كازاخستان|أستانا|AS|2
+kw|414|الكويت|الكويت|AS|1
+kg|417|قيرغيزستان|بيشكيك|AS|3
+la|418|لاوس|فيينتيان|AS|3
+lb|422|لبنان|بيروت|AS|1
+my|458|ماليزيا|كوالالمبور|AS|1
+mv|462|المالديف|ماليه|AS|2
+mn|496|منغوليا|أولان باتور|AS|2
+mm|104|ميانمار|نايبيداو|AS|3
+np|524|نيبال|كاتماندو|AS|2
+kp|408|كوريا الشمالية|بيونغ يانغ|AS|2
+om|512|عُمان|مسقط|AS|1
+pk|586|باكستان|إسلام آباد|AS|1
+ps|275|فلسطين|القدس الشرقية|AS|1
+ph|608|الفلبين|مانيلا|AS|1
+qa|634|قطر|الدوحة|AS|1
+sa|682|السعودية|الرياض|AS|1
+sg|702|سنغافورة|سنغافورة|AS|1
+kr|410|كوريا الجنوبية|سيول|AS|1
+lk|144|سريلانكا|سري جاياواردنابورا كوتي|AS|3
+sy|760|سوريا|دمشق|AS|1
+tw|158|تايوان|تايبيه|AS|2
+tj|762|طاجيكستان|دوشنبه|AS|3
+th|764|تايلاند|بانكوك|AS|1
+tl|626|تيمور الشرقية|ديلي|AS|3
+tr|792|تركيا|أنقرة|AS|1
+tm|795|تركمانستان|عشق آباد|AS|3
+ae|784|الإمارات|أبو ظبي|AS|1
+uz|860|أوزبكستان|طشقند|AS|2
+vn|704|فيتنام|هانوي|AS|2
+ye|887|اليمن|صنعاء|AS|1
+dz|12|الجزائر|الجزائر|AF|1
+ao|24|أنغولا|لواندا|AF|2
+bj|204|بنين|بورتو نوفو|AF|3
+bw|72|بوتسوانا|غابورون|AF|3
+bf|854|بوركينا فاسو|واغادوغو|AF|2
+bi|108|بوروندي|غيتيغا|AF|3
+cv|132|الرأس الأخضر|برايا|AF|3
+cm|120|الكاميرون|ياوندي|AF|2
+cf|140|أفريقيا الوسطى|بانغي|AF|3
+td|148|تشاد|نجامينا|AF|2
+km|174|جزر القمر|موروني|AF|2
+cg|178|جمهورية الكونغو|برازافيل|AF|3
+cd|180|الكونغو الديمقراطية|كينشاسا|AF|2
+ci|384|ساحل العاج|ياموسوكرو|AF|2
+dj|262|جيبوتي|جيبوتي|AF|2
+eg|818|مصر|القاهرة|AF|1
+gq|226|غينيا الاستوائية|مالابو|AF|3
+er|232|إريتريا|أسمرة|AF|2
+sz|748|إسواتيني|مبابان|AF|3
+et|231|إثيوبيا|أديس أبابا|AF|2
+ga|266|الغابون|ليبرفيل|AF|3
+gm|270|غامبيا|بانجول|AF|3
+gh|288|غانا|أكرا|AF|2
+gn|324|غينيا|كوناكري|AF|3
+gw|624|غينيا بيساو|بيساو|AF|3
+ke|404|كينيا|نيروبي|AF|2
+ls|426|ليسوتو|ماسيرو|AF|3
+lr|430|ليبيريا|مونروفيا|AF|3
+ly|434|ليبيا|طرابلس|AF|1
+mg|450|مدغشقر|أنتاناناريفو|AF|2
+mw|454|مالاوي|ليلونغوي|AF|3
+ml|466|مالي|باماكو|AF|2
+mr|478|موريتانيا|نواكشوط|AF|2
+mu|480|موريشيوس|بورت لويس|AF|3
+ma|504|المغرب|الرباط|AF|1
+mz|508|موزمبيق|مابوتو|AF|3
+na|516|ناميبيا|ويندهوك|AF|3
+ne|562|النيجر|نيامي|AF|2
+ng|566|نيجيريا|أبوجا|AF|2
+rw|646|رواندا|كيغالي|AF|2
+st|678|ساو تومي وبرينسيب|ساو تومي|AF|3
+sn|686|السنغال|داكار|AF|2
+sc|690|سيشل|فيكتوريا|AF|3
+sl|694|سيراليون|فريتاون|AF|3
+so|706|الصومال|مقديشو|AF|1
+za|710|جنوب أفريقيا|بريتوريا|AF|1
+ss|728|جنوب السودان|جوبا|AF|2
+sd|729|السودان|الخرطوم|AF|1
+tz|834|تنزانيا|دودوما|AF|2
+tg|768|توغو|لومي|AF|3
+tn|788|تونس|تونس|AF|1
+ug|800|أوغندا|كمبالا|AF|2
+zm|894|زامبيا|لوساكا|AF|2
+zw|716|زيمبابوي|هراري|AF|2
+al|8|ألبانيا|تيرانا|EU|2
+ad|20|أندورا|أندورا لا فيلا|EU|3
+at|40|النمسا|فيينا|EU|1
+by|112|بيلاروسيا|مينسك|EU|2
+be|56|بلجيكا|بروكسل|EU|1
+ba|70|البوسنة والهرسك|سراييفو|EU|2
+bg|100|بلغاريا|صوفيا|EU|2
+hr|191|كرواتيا|زغرب|EU|2
+cz|203|التشيك|براغ|EU|2
+dk|208|الدنمارك|كوبنهاغن|EU|1
+ee|233|إستونيا|تالين|EU|3
+fi|246|فنلندا|هلسنكي|EU|2
+fr|250|فرنسا|باريس|EU|1
+de|276|ألمانيا|برلين|EU|1
+gr|300|اليونان|أثينا|EU|1
+hu|348|المجر|بودابست|EU|2
+is|352|آيسلندا|ريكيافيك|EU|2
+ie|372|أيرلندا|دبلن|EU|2
+it|380|إيطاليا|روما|EU|1
+xk|383|كوسوفو|بريشتينا|EU|3
+lv|428|لاتفيا|ريغا|EU|3
+li|438|ليختنشتاين|فادوتس|EU|3
+lt|440|ليتوانيا|فيلنيوس|EU|3
+lu|442|لوكسمبورغ|لوكسمبورغ|EU|2
+mt|470|مالطا|فاليتا|EU|3
+md|498|مولدوفا|كيشيناو|EU|3
+mc|492|موناكو|موناكو|EU|2
+me|499|الجبل الأسود|بودغوريتسا|EU|3
+nl|528|هولندا|أمستردام|EU|1
+mk|807|مقدونيا الشمالية|سكوبيه|EU|3
+no|578|النرويج|أوسلو|EU|1
+pl|616|بولندا|وارسو|EU|2
+pt|620|البرتغال|لشبونة|EU|1
+ro|642|رومانيا|بوخارست|EU|2
+ru|643|روسيا|موسكو|EU|1
+sm|674|سان مارينو|سان مارينو|EU|3
+rs|688|صربيا|بلغراد|EU|2
+sk|703|سلوفاكيا|براتيسلافا|EU|3
+si|705|سلوفينيا|ليوبليانا|EU|3
+es|724|إسبانيا|مدريد|EU|1
+se|752|السويد|ستوكهولم|EU|1
+ch|756|سويسرا|برن|EU|1
+ua|804|أوكرانيا|كييف|EU|2
+gb|826|المملكة المتحدة|لندن|EU|1
+va|336|الفاتيكان|الفاتيكان|EU|2
+ag|28|أنتيغوا وبربودا|سانت جونز|NA|3
+bs|44|البهاما|ناسو|NA|2
+bb|52|باربادوس|بريدجتاون|NA|3
+bz|84|بليز|بلموبان|NA|3
+ca|124|كندا|أوتاوا|NA|1
+cr|188|كوستاريكا|سان خوسيه|NA|2
+cu|192|كوبا|هافانا|NA|1
+dm|212|دومينيكا|روسو|NA|3
+do|214|جمهورية الدومينيكان|سانتو دومينغو|NA|2
+sv|222|السلفادور|سان سلفادور|NA|2
+gd|308|غرينادا|سانت جورج|NA|3
+gt|320|غواتيمالا|غواتيمالا|NA|2
+ht|332|هايتي|بورت أو برنس|NA|2
+hn|340|هندوراس|تيغوسيغالبا|NA|2
+jm|388|جامايكا|كينغستون|NA|2
+mx|484|المكسيك|مكسيكو سيتي|NA|1
+ni|558|نيكاراغوا|ماناغوا|NA|3
+pa|591|بنما|بنما|NA|2
+kn|659|سانت كيتس ونيفيس|باستير|NA|3
+lc|662|سانت لوسيا|كاستريس|NA|3
+vc|670|سانت فنسنت والغرينادين|كينغستاون|NA|3
+tt|780|ترينيداد وتوباغو|بورت أوف سبين|NA|3
+us|840|الولايات المتحدة|واشنطن|NA|1
+ar|32|الأرجنتين|بوينس آيرس|SA|1
+bo|68|بوليفيا|سوكري|SA|2
+br|76|البرازيل|برازيليا|SA|1
+cl|152|تشيلي|سانتياغو|SA|2
+co|170|كولومبيا|بوغوتا|SA|2
+ec|218|الإكوادور|كيتو|SA|2
+gy|328|غيانا|جورج تاون|SA|3
+py|600|باراغواي|أسونسيون|SA|2
+pe|604|بيرو|ليما|SA|2
+sr|740|سورينام|باراماريبو|SA|3
+uy|858|أوروغواي|مونتيفيديو|SA|2
+ve|862|فنزويلا|كاراكاس|SA|2
+au|36|أستراليا|كانبرا|OC|1
+fj|242|فيجي|سوفا|OC|2
+ki|296|كيريباتي|تاراوا الجنوبية|OC|3
+mh|584|جزر مارشال|ماجورو|OC|3
+fm|583|ميكرونيزيا|باليكير|OC|3
+nr|520|ناورو|يارين|OC|3
+nz|554|نيوزيلندا|ويلينغتون|OC|1
+pw|585|بالاو|نغيرولمود|OC|3
+pg|598|بابوا غينيا الجديدة|بورت مورسبي|OC|2
+ws|882|ساموا|أبيا|OC|3
+sb|90|جزر سليمان|هونيارا|OC|3
+to|776|تونغا|نوكو ألوفا|OC|3
+tv|798|توفالو|فونافوتي|OC|3
+vu|548|فانواتو|بورت فيلا|OC|3
+gl|304|غرينلاند|نوك|NA|2
+pr|630|بورتوريكو|سان خوان|NA|2
+hk|344|هونغ كونغ|هونغ كونغ|AS|1
+mo|446|ماكاو|ماكاو|AS|2
+fo|234|جزر فارو|تورسهافن|EU|2
+nc|540|كاليدونيا الجديدة|نوميا|OC|3
+pf|258|بولينيزيا الفرنسية|بابيتي|OC|3
+gu|316|غوام|هاغاتنيا|OC|3
+aw|533|أروبا|أورنجستاد|NA|3
+cw|531|كوراساو|ويلمستاد|NA|3
+bm|60|برمودا|هاميلتون|NA|3
+ky|136|جزر كايمان|جورج تاون|NA|3
+re|638|ريونيون|سان دوني|AF|3
+yt|175|مايوت|مامودزو|AF|3
+ck|184|جزر كوك|أفاروا|OC|3
+nu|570|نييوي|ألوفي|OC|3
+mq|474|مارتينيك|فور دو فرانس|NA|3
+gp|312|غوادلوب|باس-تير|NA|3
+vi|850|جزر العذراء الأمريكية|شارلوت أمالي|NA|3
+vg|92|جزر العذراء البريطانية|رود تاون|NA|3
+tc|796|تركس وكايكوس|كوكبرن تاون|NA|3
+sx|534|سينت مارتن|فيلبسبورغ|NA|3
+ai|660|أنغويلا|ذا فالي|NA|3
+ms|500|مونتسرات|برادس|NA|3
+pm|666|سان بيير وميكلون|سان بيير|NA|3
+cx|162|جزيرة الكريسماس|فلاينغ فيش كوف|OC|3
+nf|574|جزيرة نورفولك|كينغستون|OC|3
+as|16|ساموا الأمريكية|باغو باغو|OC|3
+mp|580|جزر ماريانا الشمالية|سايبان|OC|3
+ax|248|جزر أولاند|ماريهامن|EU|3
+im|833|جزيرة مان|دوغلاس|EU|3
+je|832|جيرزي|سانت هيلير|EU|3
+gg|831|غيرنزي|سانت بيتر بورت|EU|3
+sh|654|سانت هيلينا|جيمستاون|AF|3
+wf|876|واليس وفوتونا|ماتا-أوتو|OC|3
+fk|238|جزر فوكلاند|ستانلي|SA|3
+sj|744|سفالبارد|لونغييربين|EU|3
+gi|292|جبل طارق|جبل طارق|EU|2
+bl|652|سان بارتليمي|غوستافيا|NA|3
+mf|663|سان مارتن|ماريغو|NA|3
+cc|166|جزر كوكوس|ويست آيلاند|OC|3
+tk|772|توكيلاو|فاكاوفو|OC|3
+pn|612|جزر بيتكيرن|آدمزتاون|OC|3
+bq|535|الجزر الكاريبية الهولندية|كراليندايك|NA|3`;
+const CONTINENTS = {AS:'آسيا', AF:'أفريقيا', EU:'أوروبا', NA:'أمريكا الشمالية', SA:'أمريكا الجنوبية', OC:'أوقيانوسيا'};
+const CONTINENT_BOX = {
+  AF: [-28, -38, 58, 38],
+  EU: [-28, 26, 62, 82],
+  AS: [24, -12, 180, 78],
+  NA: [-172, 5, -50, 84],
+  SA: [-84, -58, -30, 14]
+};
+const POINTS = {
+  va:[12.45,41.9], mc:[7.42,43.73], sm:[12.46,43.94], li:[9.52,47.14], ad:[1.52,42.51],
+  mt:[14.41,35.9], sg:[103.82,1.35], bh:[50.55,26.03], mv:[73.51,4.18], nr:[166.93,-0.52],
+  tv:[179.2,-8.52], fm:[158.16,6.92], mh:[171.18,7.13], pw:[134.58,7.52], ki:[172.98,1.45],
+  ws:[-172.1,-13.76], to:[-175.2,-21.18], vu:[168.33,-17.73], sb:[160.16,-9.43],
+  sc:[55.45,-4.68], mu:[57.55,-20.25], km:[43.33,-11.65], cv:[-23.61,15.12], st:[6.61,0.19],
+  ag:[-61.8,17.07], dm:[-61.37,15.41], gd:[-61.68,12.12], kn:[-62.73,17.36], lc:[-60.98,13.91],
+  vc:[-61.2,13.16], bb:[-59.56,13.19], tt:[-61.22,10.69], bs:[-77.4,25.03],
+  gl:[-42.6,71.7], pr:[-66.59,18.22], hk:[114.17,22.32], mo:[113.54,22.2],
+  fo:[-6.91,62.01], nc:[165.62,-21.3], pf:[-149.41,-17.68], gu:[144.79,13.44],
+  aw:[-69.97,12.52], cw:[-68.99,12.17], bm:[-64.75,32.3], ky:[-81.25,19.31],
+  re:[55.53,-21.12], yt:[45.17,-12.83], ck:[-159.78,-21.23], nu:[-169.92,-19.05],
+  mq:[-61.02,14.64], gp:[-61.55,16.26], vi:[-64.9,18.34], vg:[-64.62,18.42],
+  tc:[-71.14,21.47], sx:[-63.05,18.03], ai:[-63.05,18.22], ms:[-62.19,16.74],
+  pm:[-56.3,46.88], cx:[105.63,-10.49], nf:[167.95,-29.04], as:[-170.7,-14.28],
+  mp:[145.75,15.2], ax:[19.93,60.18], im:[-4.48,54.15], je:[-2.13,49.19],
+  gg:[-2.59,49.46], sh:[-5.72,-15.97], wf:[-176.2,-13.28], fk:[-59.0,-51.7],
+  sj:[15.64,78.22], gi:[-5.35,36.14], bl:[-62.83,17.9], mf:[-63.08,18.08],
+  cc:[96.83,-12.17], tk:[-171.86,-9.2], pn:[-130.1,-25.07], bq:[-68.28,12.15]
+};
+const TERRITORIES = new Set(['gl','pr','hk','mo','fo','nc','pf','gu','aw','cw','bm','ky','re','yt','ck','nu','mq','gp','vi','vg','tc','sx','ai','ms','pm','cx','nf','as','mp','ax','im','je','gg','sh','wf','fk','sj','gi','bl','mf','cc','tk','pn','bq']);
+let englishNames;
+try { englishNames = new Intl.DisplayNames(['en'], {type:'region'}); } catch (e) {}
+const COUNTRIES = COUNTRY_DATA.trim().split('\n').map(row => {
+  const [code,id,name,capital,continent,level] = row.split('|');
+  let english = code.toUpperCase();
+  try { english = englishNames ? englishNames.of(code.toUpperCase()) || english : english; } catch (e) {}
+  return {code,id:+id,name,capital,continent,level:+level,english};
+});
+const BY_CODE = Object.fromEntries(COUNTRIES.map(c => [c.code, c]));
+const BY_ID = new Map(COUNTRIES.map(c => [c.id, c]));
+const colorById = new Map();
+COUNTRIES.forEach((c, i) => {
+  const hue = (i * 137.508) % 360;
+  const sat = 62 + (i % 3) * 8;
+  const lig = 52 + (i % 4) * 4;
+  colorById.set(c.id, 'hsl(' + hue.toFixed(1) + ' ' + sat + '% ' + lig + '%)');
+});
+function colorFor(id) {
+  if (+id === 10) return '#d7e6ef';
+  return colorById.get(+id) || ('hsl(' + ((+id * 47) % 360) + ' 32% 46%)');
+}
+const CATEGORIES = {
+  flags:{title:'تحدّي الأعلام',short:'الأعلام',icon:'flag',color:'green',description:'كل الأعلام، دولًا وجزرًا. شوف الصورة واختَر الاسم الصحيح.'},
+  capitals:{title:'تحدّي العواصم',short:'العواصم',icon:'building',color:'purple',description:'من بغداد إلى أصغر جزيرة. العاصمة الصحيحة لكل اسم في الفهرس.'},
+  continents:{title:'تحدّي القارات',short:'القارات',icon:'globe',color:'cyan',description:'اسم دولة أو جزيرة وأربع قارات. التصنيف هو المعتمد في الفهرس.'},
+  map:{title:'تحدّي الخريطة',short:'الخريطة',icon:'map',color:'orange',description:'القارة كاملة على الخريطة، بجزرها كلها. اضغط الشكل الصحيح، وبعد الجواب تبين الأسماء.'}
+};
+const MODES = {
+  timed:{name:'سباق الدقيقة',icon:'timer',description:'60 ثانية من البنك الكامل. نقطة لكل إجابة صحيحة.',summary:'60 ثانية · البنك كامل'},
+  levels:{name:'رحلة المستويات',icon:'layers',description:'على راحتك. تقدر تاخذ الكل، أو جولة أقصر من نفس البنك.',summary:'من البنك الكامل'},
+  survival:{name:'آخر فرصة',icon:'heart',description:'ثلاثة قلوب. البنك كامل، والجولة تكمل ما دمت صامدًا.',summary:'3 فرص · بلا تكرار حتى يخلص البنك'}
+};
+const DIFFICULTIES = {
+  1:{name:'سهل',description:'خيارات بعيدة'},
+  2:{name:'متوسط',description:'خيارات متنوعة'},
+  3:{name:'صعب',description:'خيارات من نفس القارة'}
+};
+const LENGTHS = {
+  20:{name:'20 سؤال',summary:'20 سؤال من البنك الكامل'},
+  40:{name:'40 سؤال',summary:'40 سؤال من البنك الكامل'},
+  all:{name:'كل الدول والجزر',summary:'الجولة كاملة بلا استبعاد'}
+};
+const COUNTRY_NOTES = {
+  za:'بريتوريا هي العاصمة الإدارية. كيب تاون عاصمة تشريعية، وبلومفونتين عاصمة قضائية.',
+  bo:'سوكري هي العاصمة الدستورية، ولاباز مقر الحكومة.',
+  nl:'أمستردام هي العاصمة، ولاهاي مقر الحكومة.',
+  lk:'سري جاياواردنابورا كوتي هي العاصمة التشريعية، وكولومبو مركز تنفيذي وتجاري.',
+  sz:'مبابان العاصمة الإدارية، ولوبامبا العاصمة الملكية والتشريعية.',
+  nr:'لا توجد عاصمة رسمية لناورو؛ يارين تضم مقر الحكومة وتُستخدم في أسئلة اللعبة.',
+  my:'كوالالمبور هي العاصمة، وبوتراجايا مقر الحكومة الاتحادية.',
+  ci:'ياموسوكرو العاصمة الرسمية، وتوجد مؤسسات حكومية في أبيدجان.',
+  bj:'بورتو نوفو العاصمة الرسمية، وكوتونو مقر الحكومة.',
+  ps:'القدس الشرقية هي العاصمة المُعلنة لدولة فلسطين، ورام الله مقر إداري. وضع القدس محل نزاع دولي.',
+  il:'تُعلن إسرائيل القدس عاصمةً لها؛ وضع المدينة وحدود السيادة عليها محل نزاع دولي.',
+  id:'جاكرتا هي العاصمة المستخدمة في الفهرس؛ مشروع نقل العاصمة إلى نوسانتارا يجري على مراحل.',
+  ch:'برن هي المدينة الاتحادية ومقر السلطات السويسرية.',
+  ru:'تمتد روسيا في أوروبا وآسيا. يضعها الفهرس ضمن أوروبا، وخريطتها في التحدّي تُظهر الجزء الأوروبي ضمن القارة كاملة.',
+  tr:'تمتد تركيا في آسيا وأوروبا. يضعها الفهرس ضمن آسيا وتظهر مع قارة آسيا كاملة.',
+  kz:'تمتد كازاخستان في آسيا وجزء من أوروبا. الفهرس يضعها في آسيا.',
+  eg:'تقع مصر في أفريقيا وتمتد سيناء في آسيا. الفهرس يضعها في أفريقيا.',
+  hk:'هونغ كونغ منطقة إدارية خاصة، والمدينة نفسها هي المركز المعتمد في أسئلة العاصمة.',
+  mo:'ماكاو منطقة إدارية خاصة، والمدينة نفسها مركزها المعتمد.',
+  gl:'أكبر جزيرة في العالم، ذات حكم ذاتي ضمن مملكة الدنمارك. جغرافيًا ضمن أمريكا الشمالية.',
+  pr:'بورتوريكو إقليم في الكاريبي، وعاصمته سان خوان.',
+  fk:'أرخبيل في جنوب الأطلسي. السيادة عليه محل نزاع بين المملكة المتحدة والأرجنتين، وستانلي مركزه الإداري.',
+  gi:'جبل طارق إقليم على المضيق؛ السيادة عليه محل نزاع بين المملكة المتحدة وإسبانيا.',
+  sj:'سفالبارد أرخبيل نرويجي في القطب الشمالي، ومركزها لونغييربين.',
+  tk:'توكيلاو أرخبيل بلا عاصمة رسمية واحدة؛ فاكاوفو تُستخدم في أسئلة اللعبة.',
+  bq:'الجزر الكاريبية الهولندية: بونير وسينت أوستاتيوس وسابا. كراليندايك في بونير هي المركز المعتمد هنا.'
+};
+const $ = (selector, root=document) => root.querySelector(selector);
+const $$ = (selector, root=document) => [...root.querySelectorAll(selector)];
+const icon = (name, extra='') => `<svg class="icon ${extra}" aria-hidden="true"><use href="#i-${name}"></use></svg>`;
+const escapeHTML = value => String(value == null ? '' : value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const normalize = value => String(value).toLowerCase().normalize('NFD').replace(/[\u064B-\u065F\u0670\u0300-\u036f]/g,'').replace(/[أإآٱ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/\s+/g,' ').trim();
+const shuffle = list => {
+  const result = [...list];
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+};
+const formatTime = (ms, full=false, ceil=false) => {
+  const seconds = Math.max(0, ceil ? Math.ceil(ms / 1000) : Math.floor(ms / 1000));
+  const h = Math.floor(seconds / 3600), m = Math.floor(seconds / 60) % 60, s = seconds % 60;
+  return full || h > 0
+    ? `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`
+    : `${String(Math.floor(seconds / 60)).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+};
+const flagHTML = (country, size=160, quiz=false) => {
+  const alt = quiz ? 'علم الدولة المطلوب تخمينها' : ('علم ' + country.name);
+  return `<img src="https://flagcdn.com/w${size}/${country.code}.png" data-flag-code="${country.code}" alt="${escapeHTML(alt)}" loading="${quiz ? 'eager' : 'lazy'}" decoding="async">`;
+};
+const STORAGE_KEY = 'rahhal.geography.v1';
+const newCategoryStats = () => ({ms:0,plays:0,answered:0,correct:0,best:{timed:0,levels:0,survival:0}});
+const defaultStats = () => ({totalMs:0,completed:0,answered:0,correct:0,longestStreak:0,discovered:[],categories:Object.fromEntries(Object.keys(CATEGORIES).map(k => [k, newCategoryStats()])),records:{},history:[],sound:false});
+function loadStats() {
+  const initial = defaultStats();
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+    if (!saved || typeof saved !== 'object') return initial;
+    for (const key of ['totalMs','completed','answered','correct','longestStreak']) {
+      if (Number.isFinite(saved[key]) && saved[key] >= 0) initial[key] = saved[key];
+    }
+    initial.discovered = [...new Set((Array.isArray(saved.discovered) ? saved.discovered : []).filter(code => BY_CODE[code]))];
+    initial.sound = saved.sound === true;
+    if (saved.records && typeof saved.records === 'object') {
+      for (const [key, value] of Object.entries(saved.records)) if (Number.isFinite(value) && value >= 0) initial.records[key] = value;
+    }
+    initial.history = (Array.isArray(saved.history) ? saved.history : []).filter(r => r && CATEGORIES[r.category] && MODES[r.mode] && DIFFICULTIES[r.difficulty] && Number.isFinite(r.score) && Number.isFinite(r.elapsed)).slice(0, 20);
+    for (const key of Object.keys(CATEGORIES)) {
+      const c = saved.categories && saved.categories[key];
+      if (!c) continue;
+      for (const field of ['ms','plays','answered','correct']) if (Number.isFinite(c[field]) && c[field] >= 0) initial.categories[key][field] = c[field];
+      for (const mode of Object.keys(MODES)) if (Number.isFinite(c.best && c.best[mode]) && c.best[mode] >= 0) initial.categories[key].best[mode] = c.best[mode];
+    }
+  } catch (e) {}
+  return initial;
+}
+let stats = loadStats();
+let storageAvailable = true;
+function saveStats() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(stats)); }
+  catch (e) {
+    if (storageAvailable) {
+      storageAvailable = false;
+      const foot = $('.footer-left');
+      if (foot) foot.innerHTML = '<span class="live-dot"></span>التقدّم محفوظ لهذه الجلسة فقط';
+    }
+  }
+}
+let activePage = 'home';
+let setup = {category:'flags', mode:'timed', difficulty:1, length:'all'};
+let game = null;
+let lastConfig = null;
+let startToken = 0;
+let worldPromise = null;
+let worldFeatures = [];
+let featureById = new Map();
+let toastTimeout;
+let audioContext;
+let modalOnClose = null;
+let lastTick = performance.now();
+let lastStatsPaint = 0;
+let saveElapsed = 0;
+const catalogState = {query:'', continent:'all', sort:'name', view:'grid', limit:24};
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const WORLD_URLS = [
+  'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json',
+  'https://unpkg.com/world-atlas@2/countries-50m.json',
+  'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json'
+];
+function bestMinute() { return Math.max(0, ...Object.values(stats.categories).map(c => c.best.timed || 0)); }
+function rankName() {
+  const ratio = stats.discovered.length / COUNTRIES.length;
+  return ratio < 0.08 ? 'مستكشف مبتدئ' : ratio < 0.28 ? 'مسافر فضولي' : ratio < 0.62 ? 'رحّال محترف' : 'خبير العالم';
+}
+function updateStatsView() {
+  $$('[data-total-time]').forEach(el => el.textContent = formatTime(stats.totalMs, true));
+  $$('[data-category-time]').forEach(el => el.textContent = formatTime(stats.categories[el.dataset.categoryTime].ms));
+  $$('[data-country-count]').forEach(el => el.textContent = COUNTRIES.length);
+  $$('[data-stat]').forEach(el => {
+    const k = el.dataset.stat;
+    el.textContent = k === 'discovered' ? stats.discovered.length : k === 'best' ? bestMinute() : (stats[k] || 0);
+  });
+  $$('[data-flags-best]').forEach(el => el.textContent = stats.categories.flags.best.timed);
+  const bar = $('#discoveryProgress');
+  if (bar) bar.style.width = (stats.discovered.length / COUNTRIES.length * 100) + '%';
+  const rank = $('#rankLabel');
+  if (rank) rank.textContent = rankName();
+  const note = $('#completedNote');
+  if (note) note.textContent = stats.completed ? (stats.correct + ' إجابة صحيحة في رحلتك') : 'رحلتك تبدأ بخطوة';
+}
+function toast(message) {
+  $('#toastText').textContent = message;
+  $('#toast').classList.add('show');
+  clearTimeout(toastTimeout);
+  toastTimeout = setTimeout(() => $('#toast').classList.remove('show'), 3100);
+}
+function closeSidebar() {
+  $('#sidebar').classList.remove('open');
+  $('#sidebarBackdrop').classList.remove('open');
+  $('#mobileMenu').setAttribute('aria-expanded', 'false');
+  $('#mobileMenu').setAttribute('aria-label', 'فتح القائمة');
+}
+function showPage(page, category) {
+  activePage = page;
+  const pages = {home:'homePage', catalog:'catalogPage', setup:'setupPage', game:'gamePage', results:'resultsPage'};
+  Object.values(pages).forEach(id => { const node = $('#' + id); if (node) node.hidden = id !== pages[page]; });
+  const label = page === 'home' ? 'الرئيسية' : page === 'catalog' ? 'فهرس الدول' : page === 'results' ? 'حصاد الرحلة' : CATEGORIES[category || setup.category].title;
+  $('#breadcrumbCurrent').textContent = label;
+  document.title = page === 'home' ? 'رحّال — العالم ينتظر إجابتك' : (label + ' — رحّال');
+  $$('.sidebar .nav-item').forEach(el => {
+    const selected = (el.dataset.nav && el.dataset.nav === page) || (el.dataset.category && ['setup','game','results'].includes(page) && el.dataset.category === (category || setup.category));
+    el.classList.toggle('active', !!selected);
+    if (selected) el.setAttribute('aria-current', 'page');
+    else el.removeAttribute('aria-current');
+  });
+  closeSidebar();
+  window.scrollTo({top:0, behavior:'auto'});
+  updateStatsView();
+}
+function stopGame(showResults) {
+  if (!game) return false;
+  clearTimeout(game.advanceTimer);
+  const shouldSave = game.answered > 0 && !game.finished;
+  game.active = false;
+  game.finished = true;
+  if (shouldSave) commitResult();
+  saveStats();
+  if (showResults) {
+    if (game.answered) {
+      showPage('results', game.category);
+      renderResults();
+    } else {
+      toast('الجولة انتهت قبل أي إجابة');
+      showPage('setup', game.category);
+      renderSetup();
+    }
+  }
+  return shouldSave;
+}
+function performNavigation(page, category) {
+  startToken++;
+  if (game && game.active) stopGame(false);
+  if (page === 'catalog') renderCatalog();
+  if (page === 'setup') {
+    setup = {category: category || 'flags', mode:'timed', difficulty:1, length:'all'};
+    renderSetup();
+  }
+  if (page === 'home') renderHistory();
+  showPage(page, category);
+}
+function go(page, category) {
+  if (game && game.active) {
+    confirmLeave(() => performNavigation(page, category));
+    return;
+  }
+  performNavigation(page, category);
+}
+const dialog = $('#appDialog');
+function openModal(title, body, onClose) {
+  if (dialog.open) dialog.close();
+  dialog.innerHTML = `<div class="modal-header"><h2 id="dialogTitle">${title}</h2><button class="icon-btn" type="button" data-dialog-close aria-label="إغلاق">${icon('close')}</button></div><div class="modal-content">${body}</div>`;
+  modalOnClose = onClose || null;
+  dialog.showModal();
+}
+dialog.addEventListener('click', e => {
+  if (e.target === dialog || e.target.closest('[data-dialog-close]')) dialog.close();
+});
+dialog.addEventListener('close', () => {
+  const callback = modalOnClose;
+  modalOnClose = null;
+  if (callback) callback();
+});
+function confirmLeave(callback) {
+  if (!game || !game.active) { callback(); return; }
+  const wasPaused = game.paused;
+  game.paused = true;
+  renderPause();
+  openModal('نوقف الرحلة هنا؟', `<p>إذا أنهيت الجولة نحفظ نتيجتك الحالية وإجاباتك المكتشفة. تقدر تكمل إذا غيّرت رأيك.</p><div class="modal-actions"><button class="btn btn-secondary" type="button" data-dialog-close>أكمّل التحدّي</button><button class="btn btn-danger" type="button" id="confirmLeave">${icon('exit')}إنهاء وحفظ</button></div>`, () => {
+    if (game && game.active) { game.paused = wasPaused; renderPause(); }
+  });
+  $('#confirmLeave').onclick = () => {
+    modalOnClose = null;
+    dialog.close();
+    stopGame(false);
+    callback();
+  };
+}
+function territoryNote(code) {
+  if (COUNTRY_NOTES[code]) return COUNTRY_NOTES[code];
+  if (TERRITORIES.has(code)) return 'جزيرة أو إقليم مدرج مع كل الدول في الفهرس وفي كل التحديات، بعلمه والمركز المعتمد لأسئلة العاصمة.';
+  return '';
+}
+function showHelp() {
+  const g = game && game.active ? game : null;
+  const wasPaused = g ? g.paused : false;
+  if (g) { g.paused = true; renderPause(); }
+  openModal('رحلتك تبدأ من هنا', `
+    <div class="help-item">${icon('globe')}<div><h3>الكرة صارت دولًا</h3><p>الصفحة الأولى فيها كرة حقيقية. كل دولة بلون ثابت مختلف عن جارتها. اسحبها، أو استخدم الأسهم، واضغط أي دولة تفتح بطاقتها.</p></div></div>
+    <div class="help-item">${icon('flag')}<div><h3>كل التحديات من بنك واحد</h3><p>الأعلام والعواصم والقارات والخريطة تشمل الدول والجزر والأقاليم المدرجة، مو قائمة قصيرة. الصعوبة تغيّر قرب الخيارات الخاطئة، ما تحذف دول.</p></div></div>
+    <div class="help-item">${icon('map')}<div><h3>القارة كاملة، مو كم دولة حواليها</h3><p>سؤال الخريطة يعرض قارة الدولة المطلوبة كلها، بجزرها. الدولة مو شرط تكون بالنص. بعد ما تجاوب، يطلع اسم كل دولة فوق شكلها. قرّب إذا تزاحمت الأسماء.</p></div></div>
+    <div class="help-item">${icon('timer')}<div><h3>ثلاث طرق، ورحلة المستويات قد تطول</h3><p><b>سباق الدقيقة:</b> 60 ثانية من البنك كله.<br><b>رحلة المستويات:</b> 20 أو 40 أو الكل.<br><b>آخر فرصة:</b> ثلاث إجابات خاطئة تنهي الجولة. تقدر تنهي وتحفظ بنتيجتك بأي وقت.</p></div></div>
+    <div class="help-note">الفهرس يضم دول الأمم المتحدة وفلسطين والفاتيكان وتايوان وكوسوفو، ومعها جزر وأقاليم مشهورة حتى تبين على الخريطة وما تختفي التحديات عنها. عند تعدد العواصم نعتمد المذكورة في البطاقة. الدول العابرة للقارات تُلعب حسب قارة الفهرس. حدود الخريطة تعليمية وتقريبية وليست موقفًا من النزاعات.</div>
+    <div class="modal-actions"><button class="btn btn-primary" type="button" data-dialog-close>تمام، خلّ نكتشف العالم${icon('arrow-left')}</button></div>`, () => { if (g && g.active) { g.paused = wasPaused; renderPause(); } });
+}
+function showCountry(code) {
+  const c = BY_CODE[code];
+  if (!c) return;
+  const discovered = stats.discovered.includes(code);
+  const note = territoryNote(code);
+  openModal('بطاقة دولة', `
+    <div class="detail-flag">${flagHTML(c, 320)}</div>
+    <h3 class="detail-name">${escapeHTML(c.name)}</h3>
+    <span class="detail-english" dir="ltr">${escapeHTML(c.english)}</span>
+    <div class="detail-info"><div><small>${icon('pin')}العاصمة</small><strong>${escapeHTML(c.capital)}</strong></div><div><small>${icon('globe')}القارة</small><strong>${CONTINENTS[c.continent]}</strong></div></div>
+    ${note ? `<p class="country-note">${escapeHTML(note)}</p>` : ''}
+    ${discovered ? `<p class="country-note">${icon('check-circle')}اكتشفت هذا المكان بإجابة صحيحة في رحلتك.</p>` : ''}
+    <button class="btn btn-primary detail-actions" type="button" data-category="flags">جرّب معرفتك بالأعلام${icon('arrow-left')}</button>`);
+}
+function renderPreview() {
+  $('#countryPreview').innerHTML = ['iq','jp','mv','gl','br'].map(code => {
+    const c = BY_CODE[code];
+    return `<button class="preview-country" type="button" data-country="${code}">${flagHTML(c, 80)}<span><strong>${escapeHTML(c.name)}</strong><small>${escapeHTML(c.capital)} · ${CONTINENTS[c.continent]}</small></span></button>`;
+  }).join('');
+}
+function renderHistory() {
+  const section = $('#recentHistory');
+  if (!section) return;
+  section.hidden = !stats.history.length;
+  if (!stats.history.length) return;
+  section.innerHTML = `<div class="section-head"><div><h2>آخر محطّاتك</h2><p>كل جولة تترك أثرًا في رحلتك.</p></div><span class="section-aside">${icon('clock')}آخر 3 تحديات</span></div><div class="history-list">${stats.history.slice(0, 3).map(r => {
+    const cat = CATEGORIES[r.category];
+    return `<div class="history-row"><span class="stat-icon ${cat.color}">${icon(cat.icon)}</span><div class="history-details"><strong>${cat.title}</strong><small>${MODES[r.mode].name} · ${DIFFICULTIES[r.difficulty].name}</small></div><span class="history-time">${icon('clock')}<span class="number">${formatTime(r.elapsed)}</span></span><span class="history-score"><span class="number">${r.score}</span> <small>نقطة</small></span></div>`;
+  }).join('')}</div>`;
+}
+function filteredCountries() {
+  const q = normalize(catalogState.query);
+  let list = COUNTRIES.filter(c => {
+    if (catalogState.continent !== 'all' && c.continent !== catalogState.continent) return false;
+    if (!q) return true;
+    return [c.name, c.capital, c.english, CONTINENTS[c.continent], c.code].some(v => normalize(v).includes(q));
+  });
+  if (catalogState.sort === 'continent') list.sort((a, b) => CONTINENTS[a.continent].localeCompare(CONTINENTS[b.continent], 'ar') || a.name.localeCompare(b.name, 'ar'));
+  else if (catalogState.sort === 'discovered') list.sort((a, b) => (stats.discovered.includes(b.code) - stats.discovered.includes(a.code)) || a.name.localeCompare(b.name, 'ar'));
+  else list.sort((a, b) => a.name.localeCompare(b.name, 'ar'));
+  return list;
+}
+function renderCatalog() {
+  $('#catalogPage').innerHTML = `
+    <div class="page-heading"><div><h1>فهرس الدول <span class="count-badge">${COUNTRIES.length}</span></h1><p>دول وجزر وأقاليم. افتح أي بطاقة قبل ما تتحدّاها.</p></div><span class="inner-time-chip">${icon('book')}جوازك إلى العالم</span></div>
+    <div class="catalog-toolbar">
+      <div class="search-row">
+        <div class="search-box">${icon('search')}<label for="countrySearch" class="sr-only">البحث عن دولة أو جزيرة أو عاصمة</label><input id="countrySearch" type="search" placeholder="دوّر على دولة، جزيرة، عاصمة، أو قارة..." value="${escapeHTML(catalogState.query)}" autocomplete="off"><button class="search-clear" id="clearSearch" type="button" aria-label="مسح البحث" ${catalogState.query ? '' : 'hidden'}>${icon('close')}</button></div>
+        <label class="sr-only" for="catalogSort">ترتيب الدول</label>
+        <select class="sort-select" id="catalogSort"><option value="name" ${catalogState.sort === 'name' ? 'selected' : ''}>الاسم: أ – ي</option><option value="continent" ${catalogState.sort === 'continent' ? 'selected' : ''}>حسب القارة</option><option value="discovered" ${catalogState.sort === 'discovered' ? 'selected' : ''}>المكتشفة أولًا</option></select>
+        <div class="view-switch" aria-label="طريقة العرض"><button type="button" data-view="grid" aria-label="عرض شبكي" class="${catalogState.view === 'grid' ? 'selected' : ''}" aria-pressed="${catalogState.view === 'grid'}">${icon('grid')}</button><button type="button" data-view="list" aria-label="عرض قائمة" class="${catalogState.view === 'list' ? 'selected' : ''}" aria-pressed="${catalogState.view === 'list'}">${icon('list')}</button></div>
+      </div>
+      <div class="continent-filters"><button class="filter-chip" type="button" data-filter="all">كل القارات<span class="number">${COUNTRIES.length}</span></button>${Object.entries(CONTINENTS).map(([key, name]) => `<button class="filter-chip" type="button" data-filter="${key}">${name}<span class="number">${COUNTRIES.filter(c => c.continent === key).length}</span></button>`).join('')}</div>
+    </div>
+    <div class="catalog-meta"><span id="catalogCount"></span><span style="display:flex;align-items:center;gap:5px">${icon('check-circle')}العلامة الخضراء = مكان اكتشفته</span></div>
+    <div class="catalog-grid ${catalogState.view === 'list' ? 'list-view' : ''}" id="countryGrid"></div>
+    <div class="load-more-wrap" id="loadMoreWrap"></div>
+    <p class="catalog-note" id="catalogNote"></p>`;
+  $('#countrySearch').addEventListener('input', e => {
+    catalogState.query = e.target.value;
+    catalogState.limit = 24;
+    $('#clearSearch').hidden = !e.target.value;
+    renderCatalogResults();
+  });
+  $('#clearSearch').onclick = () => {
+    catalogState.query = '';
+    catalogState.limit = 24;
+    $('#countrySearch').value = '';
+    $('#clearSearch').hidden = true;
+    renderCatalogResults();
+    $('#countrySearch').focus();
+  };
+  $('#catalogSort').onchange = e => { catalogState.sort = e.target.value; renderCatalogResults(); };
+  renderCatalogResults();
+}
+function renderCatalogResults() {
+  const list = filteredCountries();
+  const shown = list.slice(0, catalogState.limit);
+  const grid = $('#countryGrid');
+  if (!grid) return;
+  grid.classList.toggle('list-view', catalogState.view === 'list');
+  $$('#catalogPage .filter-chip').forEach(chip => chip.classList.toggle('selected', chip.dataset.filter === catalogState.continent));
+  $$('#catalogPage [data-view]').forEach(btn => {
+    const on = btn.dataset.view === catalogState.view;
+    btn.classList.toggle('selected', on);
+    btn.setAttribute('aria-pressed', String(on));
+  });
+  $('#catalogCount').innerHTML = `ظاهر <strong>${shown.length}</strong> من <strong>${list.length}</strong>`;
+  $('#catalogNote').textContent = `الفهرس فيه ${COUNTRIES.length} دولة وجزيرة وإقليمًا، وكلهم داخل التحديات. افتح البطاقة لتوضيح العاصمة أو التصنيف. الخريطة التعليمية تقريبية.`;
+  grid.innerHTML = shown.length ? shown.map(c => {
+    const discovered = stats.discovered.includes(c.code);
+    return `<button class="country-card" type="button" data-country="${c.code}">${discovered ? `<span class="discovered-mark">${icon('check')}</span>` : ''}<span class="country-flag-box">${flagHTML(c, 160)}</span><span class="country-meta"><strong>${escapeHTML(c.name)}</strong><small>${icon('pin')}${escapeHTML(c.capital)}</small></span><span class="continent-tag">${CONTINENTS[c.continent]}</span><span class="country-list-arrow">${icon('chevron')}</span></button>`;
+  }).join('') : `<div class="empty-state">${icon('search')}<h3>ما لقينا هالمكان</h3><p>جرّب اسمًا ثاني، أو شيل فلتر القارة.</p></div>`;
+  const wrap = $('#loadMoreWrap');
+  wrap.innerHTML = list.length > shown.length ? `<button class="btn btn-secondary" type="button" id="loadMore">حمّل المزيد</button><p>باقي ${list.length - shown.length}</p>` : (shown.length ? `<p>هذا كل اللي طابق بحثك.</p>` : '');
+  const more = $('#loadMore');
+  if (more) more.onclick = () => { catalogState.limit += 24; renderCatalogResults(); };
+}
+function scopeText() {
+  if (setup.mode === 'timed') return '60 ثانية من الكل';
+  if (setup.mode === 'survival') return 'الكل حتى تنفد القلوب';
+  return LENGTHS[setup.length].summary;
+}
+function renderSetup() {
+  const cat = CATEGORIES[setup.category];
+  const lengthHidden = setup.mode !== 'levels';
+  $('#setupPage').innerHTML = `
+    <div class="page-heading"><div class="heading-group"><span class="heading-icon ${cat.color}">${icon(cat.icon)}</span><div><h1>${cat.title}</h1><p>${cat.description}</p></div></div><span class="inner-time-chip">${icon('clock')}لعبت<span class="number">${formatTime(stats.categories[setup.category].ms)}</span></span></div>
+    <div class="setup-layout">
+      <div class="panel">
+        <h2 class="panel-title">كيف تحب الرحلة؟</h2>
+        <p class="panel-subtitle">البنك فيه ${COUNTRIES.length} دولة وجزيرة. ماكو قائمة قصيرة مخبّية الباقي.</p>
+        <div class="mode-grid">${Object.entries(MODES).map(([key, mode]) => `<button class="mode-choice ${setup.mode === key ? 'selected' : ''}" type="button" data-mode="${key}">${icon(mode.icon)}<strong>${mode.name}</strong><small>${mode.description}</small><span class="choice-dot">${icon('check')}</span></button>`).join('')}</div>
+        <div class="difficulty-section"><h3 class="panel-title">صعوبة الخيارات</h3><p class="panel-subtitle">ما تستبعد دول. بس تقرّب الإجابات الخاطئة أو تبعدها. بالخريطة القارة كاملة دائمًا.</p><div class="difficulty-options">${Object.entries(DIFFICULTIES).map(([key, diff]) => `<button class="difficulty-btn ${setup.difficulty === +key ? 'selected' : ''}" type="button" data-difficulty="${key}"><span class="difficulty-bars">${[1,2,3].map(n => `<i class="${n <= +key ? 'lit' : ''}"></i>`).join('')}</span>${diff.name}<small>${diff.description}</small></button>`).join('')}</div></div>
+        <div class="difficulty-section" id="lengthSection" ${lengthHidden ? 'hidden' : ''}><h3 class="panel-title">قدّيش نطول؟</h3><p class="panel-subtitle">الافتراضي هو الكل. الجولة الأقصر تنسحب من نفس البنك، مو من قائمة ناقصة.</p><div class="difficulty-options">${Object.entries(LENGTHS).map(([key, item]) => `<button class="difficulty-btn ${setup.length === key ? 'selected' : ''}" type="button" data-length="${key}">${item.name}<small>${key === 'all' ? 'بلا استبعاد' : 'من الكل'}</small></button>`).join('')}</div></div>
+        <p class="setup-hint">${icon('sparkle')}تقدر تنهي أي جولة وتحفظ نتيجتك. وقت الإيقاف أو مغادرة التبويب ما ينحسب.</p>
+      </div>
+      <aside class="panel setup-summary">
+        <div class="summary-illustration ${cat.color}">${icon(cat.icon)}</div>
+        <h3>${cat.short}</h3>
+        <p>${setup.category === 'map' ? 'كل سؤال يعرض قارة المكان كاملة، مو مجموعة صغيرة حوالينه، ومو لازم يكون بالنص.' : 'الأسئلة من الدول والجزر كلها. الصعوبة بس على شكل الخيارات.'}</p>
+        <div class="summary-row"><span>النمط</span><strong>${MODES[setup.mode].name}</strong></div>
+        <div class="summary-row"><span>المستوى</span><strong>${DIFFICULTIES[setup.difficulty].name}</strong></div>
+        <div class="summary-row"><span>نطاق الرحلة</span><strong>${scopeText()}</strong></div>
+        <button class="btn btn-primary" type="button" id="startGame">ابدأ التحدّي${icon('arrow-left')}</button>
+        <p class="save-hint">${icon('shield')}نتيجتك تُحفظ على هذا الجهاز</p>
+      </aside>
+    </div>`;
+  $$('#setupPage [data-mode]').forEach(btn => btn.onclick = () => { setup.mode = btn.dataset.mode; renderSetup(); });
+  $$('#setupPage [data-difficulty]').forEach(btn => btn.onclick = () => { setup.difficulty = +btn.dataset.difficulty; renderSetup(); });
+  $$('#setupPage [data-length]').forEach(btn => btn.onclick = () => { setup.length = btn.dataset.length; renderSetup(); });
+  $('#startGame').onclick = () => startGame();
+}
+function uniqueBy(list, keyFn) {
+  const seen = new Set();
+  const out = [];
+  for (const item of list) {
+    const key = keyFn(item);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(item);
+  }
+  return out;
+}
+function choiceSet(correct, field) {
+  const pool = COUNTRIES.filter(c => c.code !== correct.code);
+  const same = pool.filter(c => c.continent === correct.continent && c[field] !== correct[field]);
+  const far = pool.filter(c => c.continent !== correct.continent && c[field] !== correct[field]);
+  let source = setup.difficulty === 1 ? far : setup.difficulty === 3 ? same : shuffle([...same, ...far]);
+  if (source.length < 3) source = pool.filter(c => c[field] !== correct[field]);
+  const picked = uniqueBy(shuffle(source), c => c[field]).slice(0, 3);
+  while (picked.length < 3) {
+    const extra = pool.find(c => c[field] !== correct[field] && !picked.includes(c) && !picked.some(p => p[field] === c[field]));
+    if (!extra) break;
+    picked.push(extra);
+  }
+  return shuffle([correct, ...picked]);
+}
+function continentChoices(correct) {
+  const wrong = shuffle(Object.keys(CONTINENTS).filter(k => k !== correct.continent)).slice(0, 3);
+  return shuffle([correct.continent, ...wrong]);
+}
+function canMap(country) {
+  return featureById.has(country.id) || !!POINTS[country.code];
+}
+function buildQuestions() {
+  let bank = shuffle(COUNTRIES.filter(c => setup.category !== 'map' || canMap(c)));
+  if (!bank.length) bank = shuffle(COUNTRIES);
+  if (setup.mode === 'levels' && setup.length !== 'all') bank = bank.slice(0, Number(setup.length));
+  return bank;
+}
+function startQuick() {
+  const run = () => {
+    setup = {category:'flags', mode:'timed', difficulty:1, length:'all'};
+    startGame();
+  };
+  if (game && game.active) confirmLeave(run);
+  else run();
+}
+function startGame() {
+  const token = ++startToken;
+  const begin = () => {
+    if (token !== startToken) return;
+    lastConfig = {...setup};
+    game = {
+      active:true, paused:false, revealed:false, finished:false,
+      category:setup.category, mode:setup.mode, difficulty:setup.difficulty,
+      questions:buildQuestions(), cursor:0, score:0, streak:0, bestStreak:0,
+      lives:3, answered:0, correct:0, elapsed:0, remaining:60000,
+      review:[], advanceTimer:null, current:null, isRecord:false, picked:null
+    };
+    showPage('game', setup.category);
+    renderGameShell();
+    showCurrentQuestion();
+  };
+  if (setup.category === 'map' && !worldFeatures.length) {
+    toast('نحمل خريطة العالم والجزر...');
+    loadWorld().then(begin).catch(() => toast('تعذّر تحميل الخريطة. تحقق من الاتصال وحاول مرة ثانية.'));
+  } else begin();
+}
+function renderGameShell() {
+  const cat = CATEGORIES[game.category];
+  $('#gamePage').innerHTML = `
+    <div class="game-toprow"><div><h1>${cat.title}</h1><p>${MODES[game.mode].name} · ${DIFFICULTIES[game.difficulty].name} · ${COUNTRIES.length} في البنك</p></div><div class="game-controls"><button class="btn btn-secondary" type="button" id="pauseBtn">${icon('pause')}<span>إيقاف</span></button><button class="btn btn-danger" type="button" id="quitBtn">${icon('exit')}<span class="quit-label">إنهاء</span></button></div></div>
+    <div class="game-metrics">
+      <div class="game-metric score-metric"><div class="metric-label">${icon('trophy')}السكور</div><div class="metric-number" id="metricScore">0</div></div>
+      <div class="game-metric"><div class="metric-label">${icon(game.mode === 'timed' ? 'timer' : 'clock')}${game.mode === 'timed' ? 'المتبقي' : 'الوقت'}</div><div class="metric-number" id="metricTime">00:00</div></div>
+      <div class="game-metric"><div class="metric-label">${icon('target')}<span id="metricProgressLabel">التقدّم</span></div><div class="metric-number" id="metricProgress">0</div></div>
+      <div class="game-metric"><div class="metric-label">${icon(game.mode === 'survival' ? 'heart' : 'zap')}<span id="metricLifeLabel">${game.mode === 'survival' ? 'القلوب' : 'السلسلة'}</span></div><div id="metricLife"></div></div>
+    </div>
+    <div class="game-stage">
+      <div class="game-stage-head"><span id="stageLabel">${icon(cat.icon)}${cat.short}</span><span class="streak-tag" id="streakTag" hidden>${icon('zap')}<span id="streakText"></span></span></div>
+      <div class="game-progress"><div class="game-progress-fill" id="gameProgress"></div></div>
+      <div class="question-content" id="questionContent"></div>
+      <div class="game-stage-foot"><span>${icon('shield')}<span id="stageFoot">جاري تجهيز السؤال</span></span><span class="keyboard-hint" id="keyHint"></span></div>
+      <div class="pause-overlay" id="pauseOverlay" hidden><div><div class="pause-icon">${icon('pause')}</div><h3>الرحلة واقفة</h3><p>الوقت واقف وياك. كمّل لما تكون جاهز، أو أنهِ واحفظ اللي وصلت له.</p><button class="btn btn-primary" type="button" id="resumeBtn">${icon('play')}كمّل</button></div></div>
+    </div>
+    <div class="game-category-time"><span class="inner-time-chip">${icon('clock')}وقت هذا التحدّي<span class="number" id="liveCategoryTime">${formatTime(stats.categories[game.category].ms)}</span></span></div>`;
+  $('#pauseBtn').onclick = () => { if (!game.active) return; game.paused = !game.paused; renderPause(); };
+  $('#resumeBtn').onclick = () => { game.paused = false; renderPause(); };
+  $('#quitBtn').onclick = () => confirmLeave(() => stopGame(true));
+  updateGameMetrics();
+}
+function renderPause() {
+  const overlay = $('#pauseOverlay');
+  const btn = $('#pauseBtn');
+  if (!overlay) return;
+  overlay.hidden = !game.paused;
+  if (btn) btn.innerHTML = game.paused ? `${icon('play')}<span>متابعة</span>` : `${icon('pause')}<span>إيقاف</span>`;
+}
+function updateGameMetrics() {
+  if (!game || !$('#metricScore')) return;
+  $('#metricScore').textContent = game.score;
+  const timeNode = $('#metricTime');
+  if (game.mode === 'timed') {
+    timeNode.textContent = formatTime(game.remaining, false, true);
+    timeNode.classList.toggle('timer-urgent', game.remaining <= 10000);
+  } else timeNode.textContent = formatTime(game.elapsed);
+  const progress = $('#gameProgress');
+  if (game.mode === 'timed') {
+    progress.style.width = (game.remaining / 60000 * 100) + '%';
+    progress.classList.toggle('urgent', game.remaining <= 10000);
+    $('#metricProgress').textContent = game.answered;
+    $('#metricProgressLabel').textContent = 'أجوبة';
+  } else if (game.mode === 'levels') {
+    const total = Math.max(1, game.questions.length);
+    progress.style.width = (game.cursor / total * 100) + '%';
+    progress.classList.remove('urgent');
+    $('#metricProgress').innerHTML = `<span class="number">${Math.min(game.cursor + (game.revealed ? 0 : 1), total)}</span><span class="metric-unit">/ ${total}</span>`;
+    $('#metricProgressLabel').textContent = 'السؤال';
+  } else {
+    progress.style.width = Math.min(100, game.answered * 4) + '%';
+    progress.classList.remove('urgent');
+    $('#metricProgress').textContent = game.answered;
+    $('#metricProgressLabel').textContent = 'أجوبة';
+  }
+  const life = $('#metricLife');
+  if (game.mode === 'survival') {
+    life.className = 'lives';
+    life.innerHTML = [0,1,2].map(i => `<svg class="icon ${i < game.lives ? '' : 'lost'}"><use href="#i-heart"></use></svg>`).join('');
+  } else {
+    life.className = 'metric-number';
+    life.textContent = game.streak;
+  }
+  const tag = $('#streakTag');
+  if (tag) {
+    tag.hidden = game.streak < 2;
+    const text = $('#streakText');
+    if (text) text.textContent = 'سلسلة ' + game.streak;
+  }
+  const live = $('#liveCategoryTime');
+  if (live) live.textContent = formatTime(stats.categories[game.category].ms);
+}
+function showCurrentQuestion() {
+  if (!game || !game.active) return;
+  if (game.mode === 'survival' && game.lives <= 0) return finishGame();
+  if (game.mode === 'levels' && game.cursor >= game.questions.length) return finishGame();
+  if (game.mode === 'timed' && game.remaining <= 0) return finishGame();
+  let country = game.questions[game.cursor];
+  if (!country) {
+    if (game.mode === 'levels') return finishGame();
+    game.questions = shuffle(COUNTRIES.filter(c => game.category !== 'map' || canMap(c)));
+    game.cursor = 0;
+    country = game.questions[0];
+  }
+  if (game.category === 'map' && !canMap(country)) {
+    game.cursor++;
+    showCurrentQuestion();
+    return;
+  }
+  game.current = country;
+  game.revealed = false;
+  game.picked = null;
+  const box = $('#questionContent');
+  const foot = $('#stageFoot');
+  const hint = $('#keyHint');
+  if (game.category === 'flags') {
+    const options = choiceSet(country, 'name');
+    box.innerHTML = `<p class="question-eyebrow">لمن هذا العلم؟</p><h2 class="question-title">اختَر الدولة أو الجزيرة</h2><div class="question-media"><div class="quiz-flag-frame">${flagHTML(country, 320, true)}</div></div>${optionsHTML(options, o => o.name, o => o.code)}<div class="answer-feedback" id="feedback" aria-live="polite">أربعة خيارات. واحد منهم صحيح.</div>`;
+    foot.textContent = 'من البنك الكامل، مو من قائمة قصيرة';
+    hint.innerHTML = 'اختصار <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd>';
+  } else if (game.category === 'capitals') {
+    const options = choiceSet(country, 'capital');
+    box.innerHTML = `<div class="country-question"><span class="country-question-icon purple">${icon('building')}</span><p class="question-eyebrow">شنو عاصمة</p><h3>${escapeHTML(country.name)}</h3><span class="country-english" dir="ltr">${escapeHTML(country.english)}</span></div><div class="question-country-row">${flagHTML(country, 80)}</div><div class="answer-grid" style="margin-top:18px">${optionsHTML(options, o => o.capital, o => o.code, true)}</div><div class="answer-feedback" id="feedback" aria-live="polite">اختَر العاصمة المعتمدة في الفهرس.</div>`;
+    foot.textContent = 'عند تعدد العواصم، المعتمدة مكتوبة ببطاقة الدولة';
+    hint.innerHTML = 'اختصار <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd>';
+  } else if (game.category === 'continents') {
+    const options = continentChoices(country);
+    box.innerHTML = `<div class="country-question"><span class="country-question-icon cyan">${icon('globe')}</span><p class="question-eyebrow">وين مكان</p><h3>${escapeHTML(country.name)}</h3><span class="country-english" dir="ltr">${escapeHTML(country.english)}</span></div><div class="question-country-row">${flagHTML(country, 80)}</div><div class="answer-grid" style="margin-top:18px">${options.map((key, i) => `<button class="answer-option" type="button" data-value="${key}"><span class="answer-number">${i + 1}</span><span class="answer-text">${CONTINENTS[key]}</span></button>`).join('')}</div><div class="answer-feedback" id="feedback" aria-live="polite">التصنيف حسب الفهرس، حتى لو المكان يعبر قارتين.</div>`;
+    foot.textContent = 'ست قارات، والسؤال من الكل';
+    hint.innerHTML = 'اختصار <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd>';
+  } else {
+    const count = COUNTRIES.filter(c => c.continent === country.continent).length;
+    box.innerHTML = `<p class="question-eyebrow">وين شكلها؟ مو شرط بالنص</p><h2 class="question-title">اضغط على ${escapeHTML(country.name)}</h2><div class="question-country-row">${flagHTML(country, 80)}<span class="country-english" dir="ltr">${escapeHTML(country.english)}</span></div><p class="map-instruction">${CONTINENTS[country.continent]} كاملة · <span class="number">${count}</span> دولة وجزيرة على الخريطة</p><div class="map-box" id="mapMount"><div class="map-loading">${icon('refresh','spin')}<span>نفتح القارة كاملة...</span></div></div><p class="map-tip">اسحب للتحريك · قرّب للجزر الصغيرة · الأسماء تطلع فوق كل دولة بعد الجواب</p><div class="answer-feedback" id="feedback" aria-live="polite">دوّر الشكل داخل القارة، مو داخل مجموعة صغيرة.</div>`;
+    foot.textContent = 'القارة كاملة، والدولة المطلوبة مو مثبتة بالنص';
+    hint.textContent = 'بعد الجواب تقدر تقرأ الأسماء بهدوء';
+    mountMap(country);
+  }
+  $$('#questionContent .answer-option').forEach(btn => btn.onclick = () => selectChoice(btn));
+  updateGameMetrics();
+}
+function optionsHTML(options, labelFn, valueFn, bare) {
+  const html = options.map((item, i) => `<button class="answer-option" type="button" data-value="${escapeHTML(valueFn(item))}"><span class="answer-number">${i + 1}</span><span class="answer-text">${escapeHTML(labelFn(item))}</span></button>`).join('');
+  return bare ? html : `<div class="answer-grid">${html}</div>`;
+}
+function selectChoice(button) {
+  if (!game || !game.active || game.revealed || game.paused) return;
+  const country = game.current;
+  const picked = button.dataset.value;
+  const correctValue = game.category === 'continents' ? country.continent : country.code;
+  const ok = picked === correctValue;
+  game.revealed = true;
+  $$('.answer-option').forEach(b => {
+    b.disabled = true;
+    if (b.dataset.value === correctValue) b.classList.add('correct');
+    else if (b === button && !ok) b.classList.add('wrong');
+    else b.classList.add('dimmed');
+    if (b.dataset.value === correctValue) b.insertAdjacentHTML('beforeend', icon('check', 'answer-result'));
+    else if (b === button && !ok) b.insertAdjacentHTML('beforeend', icon('close', 'answer-result'));
+  });
+  const pickedCountry = BY_CODE[picked];
+  const pickedLabel = game.category === 'continents' ? (CONTINENTS[picked] || 'خيار') : game.category === 'capitals' ? ((pickedCountry && pickedCountry.capital) || 'خيار') : ((pickedCountry && pickedCountry.name) || 'خيار');
+  const correctLabel = game.category === 'continents' ? CONTINENTS[country.continent] : game.category === 'capitals' ? country.capital : country.name;
+  registerAnswer(ok, country, pickedLabel, correctLabel);
+  const feedback = $('#feedback');
+  feedback.className = 'answer-feedback ' + (ok ? 'good' : 'bad');
+  feedback.innerHTML = `${icon(ok ? 'check-circle' : 'close')}<span>${ok ? 'صحيح' : 'مو هذي'} · ${escapeHTML(country.name)} · ${escapeHTML(correctLabel)}</span><button class="next-question" type="button" id="nextQuestion">السؤال التالي</button>`;
+  $('#nextQuestion').onclick = advance;
+  beep(ok);
+  if (game.mode !== 'levels') scheduleAdvance(game.mode === 'timed' ? 900 : 1100);
+  else scheduleAdvance(1400);
+}
+function explodeFeature(feature) {
+  const geometry = feature.geometry;
+  if (!geometry) return [];
+  if (geometry.type === 'Polygon') return [feature];
+  if (geometry.type === 'MultiPolygon') {
+    return geometry.coordinates.map(coordinates => ({type:'Feature', id:feature.id, properties:feature.properties || {}, geometry:{type:'Polygon', coordinates}}));
+  }
+  return [];
+}
+function inBox(coord, box, pad=8) {
+  if (!coord || !Number.isFinite(coord[0]) || !Number.isFinite(coord[1])) return false;
+  return coord[0] >= box[0] - pad && coord[0] <= box[2] + pad && coord[1] >= box[1] - pad && coord[1] <= box[3] + pad;
+}
+function continentPieces(target) {
+  const box = CONTINENT_BOX[target.continent];
+  const members = COUNTRIES.filter(c => c.continent === target.continent);
+  const ids = new Set(members.map(c => c.id));
+  const pieces = [];
+  const seen = new Set();
+  worldFeatures.forEach(feature => {
+    const id = +feature.id;
+    if (!ids.has(id)) return;
+    let parts = explodeFeature(feature);
+    if (box) {
+      const inside = parts.filter(part => inBox(d3.geoCentroid(part), box));
+      parts = inside.length ? inside : parts.slice(0, 1);
+    }
+    if (parts.length) {
+      seen.add(id);
+      pieces.push(...parts);
+    }
+  });
+  members.forEach(country => {
+    if (seen.has(country.id) || !POINTS[country.code]) return;
+    const point = POINTS[country.code];
+    if (box && !inBox(point, box, 18) && country.code !== target.code) return;
+    pieces.push({type:'Feature', id:country.id, properties:{synthetic:true, code:country.code}, geometry:{type:'Point', coordinates:point}});
+  });
+  if (!pieces.some(piece => +piece.id === target.id) && POINTS[target.code]) {
+    pieces.push({type:'Feature', id:target.id, properties:{synthetic:true, code:target.code}, geometry:{type:'Point', coordinates:POINTS[target.code]}});
+  }
+  return pieces;
+}
+function mountMap(target) {
+  const box = $('#mapMount');
+  if (!box) return;
+  if (!worldFeatures.length) {
+    box.innerHTML = `<div class="map-loading">${icon('refresh','spin')}<span>نحمل القارة والجزر...</span></div>`;
+    loadWorld().then(() => { if (game && game.current && game.current.code === target.code && !game.revealed) mountMap(target); }).catch(() => {
+      box.innerHTML = `<div class="map-loading"><span>تعذّر تحميل الخريطة.</span><button class="btn btn-secondary" type="button" id="retryMap">إعادة المحاولة</button></div>`;
+      const retry = $('#retryMap');
+      if (retry) retry.onclick = () => { worldPromise = null; mountMap(target); };
+    });
+    return;
+  }
+  const pieces = continentPieces(target);
+  if (!pieces.length) {
+    box.innerHTML = `<div class="map-loading"><span>ما لقينا أشكال هذه القارة.</span></div>`;
+    return;
+  }
+  const width = Math.max(280, box.clientWidth || 680);
+  const height = Math.max(230, box.clientHeight || 420);
+  const collection = {type:'FeatureCollection', features:pieces};
+  const projection = d3.geoMercator().precision(0.4);
+  if (target.continent === 'OC') projection.rotate([-168, 0]);
+  projection.fitExtent([[36, 46], [width - 28, height - 34]], collection);
+  const path = d3.geoPath(projection);
+  box.innerHTML = `<svg class="quiz-map" id="quizMap" viewBox="0 0 ${width} ${height}" role="img" aria-label="خريطة ${CONTINENTS[target.continent]} كاملة"><g class="map-layer" id="mapLayer"></g></svg><div class="map-controls"><button class="icon-btn" type="button" id="zoomIn" aria-label="تكبير">${icon('plus')}</button><button class="icon-btn" type="button" id="zoomOut" aria-label="تصغير">${icon('minus')}</button><button class="icon-btn" type="button" id="zoomReset" aria-label="إعادة ضبط">${icon('refresh')}</button></div><div class="map-legend"><i></i>كل دولة بلون · الأسماء بعد الجواب</div>`;
+  const svg = d3.select('#quizMap');
+  const layer = d3.select('#mapLayer');
+  const shapeLayer = layer.append('g');
+  const markerLayer = layer.append('g');
+  const labelLayer = layer.append('g').attr('class', 'map-labels').style('display', 'none');
+  const areas = pieces.filter(feature => feature.geometry.type !== 'Point');
+  const points = pieces.filter(feature => feature.geometry.type === 'Point');
+  shapeLayer.selectAll('path').data(areas).join('path').attr('class', 'country-shape').attr('d', path).attr('fill', d => colorFor(d.id)).attr('tabindex', 0).on('click', (event, d) => { event.stopPropagation(); pickMap(+d.id); }).on('keydown', (event, d) => { if (event.key === 'Enter') pickMap(+d.id); });
+  areas.forEach(feature => {
+    const bounds = path.bounds(feature);
+    const w = bounds[1][0] - bounds[0][0];
+    const h = bounds[1][1] - bounds[0][1];
+    if (w < 14 || h < 14) points.push({type:'Feature', id:feature.id, properties:{hit:true}, geometry:{type:'Point', coordinates:d3.geoCentroid(feature)}});
+  });
+  const hitPoints = [];
+  const seenHit = new Set();
+  points.forEach(feature => {
+    if (seenHit.has(+feature.id) && feature.properties && feature.properties.hit) return;
+    seenHit.add(+feature.id);
+    hitPoints.push(feature);
+  });
+  markerLayer.selectAll('circle').data(hitPoints).join('circle').attr('class', 'island-dot').attr('cx', d => projection(d.geometry.coordinates)[0]).attr('cy', d => projection(d.geometry.coordinates)[1]).attr('r', 7).attr('fill', d => colorFor(d.id)).on('click', (event, d) => { event.stopPropagation(); pickMap(+d.id); });
+  const labelItems = [];
+  const labeled = new Set();
+  pieces.forEach(feature => {
+    const id = +feature.id;
+    if (labeled.has(id) || !BY_ID.has(id)) return;
+    labeled.add(id);
+    const country = BY_ID.get(id);
+    let xy = feature.geometry.type === 'Point' ? projection(feature.geometry.coordinates) : path.centroid(feature);
+    if (!xy || !Number.isFinite(xy[0]) || !Number.isFinite(xy[1])) {
+      const center = d3.geoCentroid(feature);
+      xy = projection(center);
+    }
+    if (!xy || !Number.isFinite(xy[0])) return;
+    labelItems.push({id, name:country.name, x:xy[0], y:xy[1] - 12, originY:xy[1]});
+  });
+  labelItems.sort((a, b) => a.y - b.y || a.x - b.x);
+  const placed = [];
+  labelItems.forEach(item => {
+    let y = item.y;
+    for (let n = 0; n < 10; n++) {
+      if (!placed.some(p => Math.abs(p.x - item.x) < 54 && Math.abs(p.y - y) < 13)) break;
+      y -= 13;
+    }
+    placed.push({...item, y});
+  });
+  labelLayer.selectAll('line').data(placed.filter(item => item.originY - item.y > 16)).join('line').attr('class', 'label-stem').attr('x1', d => d.x).attr('y1', d => d.originY - 4).attr('x2', d => d.x).attr('y2', d => d.y + 4);
+  labelLayer.selectAll('text').data(placed).join('text').attr('class', d => 'country-label' + (d.id === target.id ? ' is-correct-label' : '')).attr('x', d => d.x).attr('y', d => d.y).attr('text-anchor', 'middle').text(d => d.name);
+  const zoom = d3.zoom().scaleExtent([1, 14]).on('zoom', event => layer.attr('transform', event.transform));
+  svg.call(zoom);
+  svg.on('dblclick.zoom', null);
+  $('#zoomIn').onclick = () => svg.transition().duration(180).call(zoom.scaleBy, 1.45);
+  $('#zoomOut').onclick = () => svg.transition().duration(180).call(zoom.scaleBy, 0.72);
+  $('#zoomReset').onclick = () => svg.transition().duration(180).call(zoom.transform, d3.zoomIdentity);
+  game.mapReveal = () => {
+    svg.classed('is-answered', true);
+    labelLayer.style('display', null);
+    shapeLayer.selectAll('path').classed('is-correct', d => +d.id === target.id).classed('is-wrong', d => game.picked && +d.id === game.picked && +d.id !== target.id);
+    markerLayer.selectAll('circle').classed('is-correct', d => +d.id === target.id).classed('is-wrong', d => game.picked && +d.id === game.picked && +d.id !== target.id);
+  };
+}
+function pickMap(id) {
+  if (!game || !game.active || game.revealed || game.paused || game.category !== 'map') return;
+  const country = game.current;
+  const picked = BY_ID.get(id);
+  const ok = id === country.id;
+  game.picked = id;
+  game.revealed = true;
+  if (game.mapReveal) game.mapReveal();
+  const pickedLabel = picked ? picked.name : 'مكان غير مدرج';
+  registerAnswer(ok, country, pickedLabel, country.name);
+  const count = COUNTRIES.filter(c => c.continent === country.continent).length;
+  const feedback = $('#feedback');
+  feedback.className = 'answer-feedback ' + (ok ? 'good' : 'bad');
+  feedback.innerHTML = `${icon(ok ? 'check-circle' : 'close')}<span>${ok ? 'صحيح' : 'مو هذي'} · المطلوب ${escapeHTML(country.name)} · بانَت أسماء ${count} مكان فوق الخريطة</span><button class="next-question" type="button" id="nextQuestion">السؤال التالي</button>`;
+  $('#nextQuestion').onclick = advance;
+  beep(ok);
+  if (game.mode === 'timed') scheduleAdvance(2800);
+}
+function registerAnswer(ok, country, pickedLabel, correctLabel) {
+  stats.answered++;
+  stats.categories[game.category].answered++;
+  game.answered++;
+  if (ok) {
+    stats.correct++;
+    stats.categories[game.category].correct++;
+    game.correct++;
+    game.score++;
+    game.streak++;
+    game.bestStreak = Math.max(game.bestStreak, game.streak);
+    stats.longestStreak = Math.max(stats.longestStreak, game.streak);
+    if (!stats.discovered.includes(country.code)) stats.discovered.push(country.code);
+  } else {
+    game.streak = 0;
+    if (game.mode === 'survival') game.lives--;
+    game.review.push({code:country.code, pickedLabel, correctLabel});
+  }
+  saveStats();
+  updateStatsView();
+  updateGameMetrics();
+}
+function scheduleAdvance(ms) {
+  clearTimeout(game.advanceTimer);
+  game.advanceTimer = setTimeout(() => {
+    if (!game || !game.active || game.paused) return;
+    advance();
+  }, ms);
+}
+function advance() {
+  if (!game || !game.active) return;
+  clearTimeout(game.advanceTimer);
+  if (game.mode === 'timed' && game.remaining <= 0) return finishGame();
+  if (game.mode === 'survival' && game.lives <= 0) return finishGame();
+  game.cursor++;
+  if (game.mode === 'levels' && game.cursor >= game.questions.length) return finishGame();
+  game.revealed = false;
+  showCurrentQuestion();
+}
+function commitResult() {
+  const cat = stats.categories[game.category];
+  cat.plays++;
+  stats.completed++;
+  const prev = cat.best[game.mode] || 0;
+  game.isRecord = game.score > prev && game.score > 0;
+  if (game.score > prev) cat.best[game.mode] = game.score;
+  const key = game.category + ':' + game.mode + ':' + game.difficulty;
+  if (game.score > (stats.records[key] || 0)) stats.records[key] = game.score;
+  stats.history.unshift({category:game.category, mode:game.mode, difficulty:game.difficulty, score:game.score, elapsed:game.elapsed, at:Date.now()});
+  stats.history = stats.history.slice(0, 20);
+}
+function finishGame() {
+  if (!game || game.finished) return;
+  clearTimeout(game.advanceTimer);
+  game.active = false;
+  game.finished = true;
+  if (game.answered) commitResult();
+  saveStats();
+  showPage('results', game.category);
+  renderResults();
+}
+function renderResults() {
+  const cat = CATEGORIES[game.category];
+  const accuracy = game.answered ? Math.round(game.correct / game.answered * 100) : 0;
+  const title = !game.answered ? 'الجولة ما بدأت' : accuracy === 100 ? 'رحلة مثالية' : accuracy >= 80 ? 'مستكشف بارع' : accuracy >= 50 ? 'أداء جميل' : 'المحاولة الجاية أحلى';
+  const misses = game.review;
+  const celebrate = accuracy >= 70 || game.isRecord;
+  $('#resultsPage').innerHTML = `
+    <div class="results-wrap">
+      <div class="result-hero">${celebrate ? `<div class="confetti">${Array.from({length:18}, (_, i) => `<i style="left:${(i * 53) % 100}%;animation-delay:${(i * 0.08).toFixed(2)}s"></i>`).join('')}</div>` : ''}<div class="result-trophy">${icon('trophy')}</div><p class="result-kicker">${cat.title} · ${MODES[game.mode].name}</p><h1>${title}</h1><p class="result-subtitle">${game.answered ? `جاوبت ${game.answered} من بنك فيه ${COUNTRIES.length} دولة وجزيرة.` : 'ما انحسبت نتيجة لأن ماكو إجابة.'}</p><div class="result-score number">${game.score}</div><div class="result-score-label">نقطة صحيحة</div>${game.isRecord ? `<div class="new-record">${icon('sparkle')}رقم قياسي جديد</div>` : ''}<div class="result-stat-grid"><div class="result-stat"><span class="number">${accuracy}%</span><small>الدقة</small></div><div class="result-stat"><span class="number">${formatTime(game.elapsed)}</span><small>وقت اللعب</small></div><div class="result-stat"><span class="number">${game.bestStreak}</span><small>أطول سلسلة</small></div></div><div class="result-actions"><button class="btn btn-primary" type="button" id="replayBtn">${icon('refresh')}نفس الرحلة</button><button class="btn btn-secondary" type="button" id="newSetupBtn">${icon('layers')}إعداد جديد</button></div><button class="result-home" type="button" data-nav="home">ارجع للرئيسية</button></div>
+      <div class="review-section"><div class="section-head"><div><h2>مراجعة الرحلة</h2><p>${misses.length ? 'الأماكن اللي انفلتت، حتى ترجع لها.' : 'ما فيه إجابة خاطئة بهالجولة.'}</p></div></div>${misses.length ? `<div class="review-list">${misses.map(item => { const c = BY_CODE[item.code]; return `<div class="review-item">${flagHTML(c, 80)}<div><strong>${escapeHTML(c.name)}</strong><small>اخترت: ${escapeHTML(item.pickedLabel)}</small></div><div class="review-correct">${escapeHTML(item.correctLabel)}<small>الصحيح</small></div></div>`; }).join('')}</div>` : `<div class="perfect-message">${icon('check-circle')}<div><h3>نظيف.</h3><p>كل إجاباتك بهالجولة كانت صحيحة.</p></div></div>`}</div>
+    </div>`;
+  $('#replayBtn').onclick = () => {
+    if (!lastConfig) return;
+    setup = {...lastConfig};
+    startGame();
+  };
+  $('#newSetupBtn').onclick = () => go('setup', game.category);
+}
+function beep(ok) {
+  if (!stats.sound) return;
+  try {
+    audioContext = audioContext || new (window.AudioContext || window.webkitAudioContext)();
+    const osc = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+    osc.type = 'sine';
+    osc.frequency.value = ok ? 680 : 180;
+    gain.gain.value = 0.045;
+    osc.connect(gain);
+    gain.connect(audioContext.destination);
+    osc.start();
+    osc.stop(audioContext.currentTime + (ok ? 0.12 : 0.18));
+  } catch (e) {}
+}
+function renderSound() {
+  const button = $('#soundButton');
+  button.classList.toggle('sound-on', stats.sound);
+  button.setAttribute('aria-pressed', String(stats.sound));
+  button.setAttribute('aria-label', stats.sound ? 'كتم المؤثرات الصوتية' : 'تفعيل المؤثرات الصوتية');
+  button.innerHTML = icon(stats.sound ? 'sound' : 'mute');
+}
+async function fetchWorld() {
+  let last;
+  for (const url of WORLD_URLS) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(String(response.status));
+      return await response.json();
+    } catch (e) { last = e; }
+  }
+  throw last || new Error('world');
+}
+function loadWorld() {
+  if (!worldPromise) {
+    worldPromise = fetchWorld().then(world => {
+      const collection = topojson.feature(world, world.objects.countries);
+      worldFeatures = collection.features || [];
+      featureById = new Map(worldFeatures.map(feature => [+feature.id, feature]));
+      return worldFeatures;
+    }).catch(error => { worldPromise = null; throw error; });
+  }
+  return worldPromise;
+}
+let globeRotation = [-38, -18, 0];
+let globeDrag = null;
+let globeAuto = !reduceMotion;
+let globeTimer = 0;
+let globeHoverAt = 0;
+function drawGlobe() {
+  const canvas = $('#globeCanvas');
+  if (!canvas || $('#homePage').hidden) return;
+  const wrap = $('#heroGlobe');
+  const size = Math.max(120, wrap.clientWidth || 320);
+  const dpr = Math.min(2, window.devicePixelRatio || 1);
+  if (canvas.width !== Math.round(size * dpr)) {
+    canvas.width = Math.round(size * dpr);
+    canvas.height = Math.round(size * dpr);
+  }
+  const ctx = canvas.getContext('2d');
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.clearRect(0, 0, size, size);
+  const radius = size * 0.46;
+  const projection = d3.geoOrthographic().scale(radius).translate([size / 2, size / 2]).rotate(globeRotation).clipAngle(90).precision(0.45);
+  const path = d3.geoPath(projection, ctx);
+  ctx.beginPath();
+  ctx.arc(size / 2, size / 2, radius, 0, Math.PI * 2);
+  const ocean = ctx.createRadialGradient(size * 0.38, size * 0.34, radius * 0.15, size / 2, size / 2, radius);
+  ocean.addColorStop(0, '#1d6280');
+  ocean.addColorStop(1, '#0c2232');
+  ctx.fillStyle = ocean;
+  ctx.fill();
+  if (d3.geoGraticule10) {
+    ctx.beginPath();
+    path(d3.geoGraticule10());
+    ctx.strokeStyle = 'rgba(255,255,255,.09)';
+    ctx.lineWidth = 0.6;
+    ctx.stroke();
+  }
+  worldFeatures.forEach(feature => {
+    ctx.beginPath();
+    path(feature);
+    ctx.fillStyle = colorFor(feature.id);
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(8,16,22,.55)';
+    ctx.lineWidth = 0.45;
+    ctx.stroke();
+  });
+  COUNTRIES.forEach(country => {
+    if (featureById.has(country.id) || !POINTS[country.code]) return;
+    const point = projection(POINTS[country.code]);
+    if (!point) return;
+    ctx.beginPath();
+    ctx.arc(point[0], point[1], 2.5, 0, Math.PI * 2);
+    ctx.fillStyle = colorFor(country.id);
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(8,16,22,.7)';
+    ctx.lineWidth = 0.6;
+    ctx.stroke();
+  });
+  const shade = ctx.createRadialGradient(size * 0.36, size * 0.32, radius * 0.2, size / 2, size / 2, radius);
+  shade.addColorStop(0, 'rgba(255,255,255,.16)');
+  shade.addColorStop(0.52, 'rgba(255,255,255,0)');
+  shade.addColorStop(1, 'rgba(0,0,0,.38)');
+  ctx.beginPath();
+  ctx.arc(size / 2, size / 2, radius, 0, Math.PI * 2);
+  ctx.fillStyle = shade;
+  ctx.fill();
+  ctx.beginPath();
+  ctx.arc(size / 2, size / 2, radius, 0, Math.PI * 2);
+  ctx.strokeStyle = 'rgba(186,226,214,.7)';
+  ctx.lineWidth = 2;
+  ctx.stroke();
+  canvas._projection = projection;
+}
+function globePoint(event) {
+  const canvas = $('#globeCanvas');
+  const rect = canvas.getBoundingClientRect();
+  return [event.clientX - rect.left, event.clientY - rect.top];
+}
+function pickGlobe(event) {
+  const canvas = $('#globeCanvas');
+  const projection = canvas && canvas._projection;
+  if (!projection) return null;
+  const xy = globePoint(event);
+  let nearest = null;
+  let best = 9;
+  COUNTRIES.forEach(country => {
+    if (featureById.has(country.id) || !POINTS[country.code]) return;
+    const point = projection(POINTS[country.code]);
+    if (!point) return;
+    const dist = Math.hypot(point[0] - xy[0], point[1] - xy[1]);
+    if (dist < best) { best = dist; nearest = country; }
+  });
+  if (nearest) return nearest;
+  const lonlat = projection.invert(xy);
+  if (!lonlat || !Number.isFinite(lonlat[0])) return null;
+  const feature = worldFeatures.find(item => d3.geoContains(item, lonlat));
+  return feature ? BY_ID.get(+feature.id) : null;
+}
+function initHeroGlobe() {
+  const canvas = $('#globeCanvas');
+  if (!canvas) return;
+  canvas.addEventListener('pointerdown', event => {
+    globeDrag = {x:event.clientX, y:event.clientY, rot:globeRotation.slice(), moved:false};
+    globeAuto = false;
+    canvas.setPointerCapture(event.pointerId);
+  });
+  canvas.addEventListener('pointermove', event => {
+    if (globeDrag) {
+      const dx = event.clientX - globeDrag.x;
+      const dy = event.clientY - globeDrag.y;
+      if (Math.hypot(dx, dy) > 3) globeDrag.moved = true;
+      globeRotation = [globeDrag.rot[0] + dx * 0.45, Math.max(-75, Math.min(75, globeDrag.rot[1] - dy * 0.4)), 0];
+      drawGlobe();
+      return;
+    }
+    const now = performance.now();
+    if (now - globeHoverAt < 40) return;
+    globeHoverAt = now;
+    const country = pickGlobe(event);
+    const tip = $('#globeTip');
+    if (!country) { tip.hidden = true; return; }
+    const rect = $('#heroGlobe').getBoundingClientRect();
+    tip.hidden = false;
+    tip.textContent = country.name;
+    tip.style.left = (event.clientX - rect.left) + 'px';
+    tip.style.top = (event.clientY - rect.top) + 'px';
+  });
+  canvas.addEventListener('pointerup', event => {
+    if (globeDrag && !globeDrag.moved) {
+      const country = pickGlobe(event);
+      if (country) showCountry(country.code);
+    }
+    globeDrag = null;
+    if (!reduceMotion) globeAuto = true;
+  });
+  canvas.addEventListener('pointerleave', () => { $('#globeTip').hidden = true; });
+  canvas.tabIndex = 0;
+  canvas.addEventListener('keydown', event => {
+    let used = true;
+    if (event.key === 'ArrowLeft') globeRotation[0] -= 8;
+    else if (event.key === 'ArrowRight') globeRotation[0] += 8;
+    else if (event.key === 'ArrowUp') globeRotation[1] = Math.min(75, globeRotation[1] + 6);
+    else if (event.key === 'ArrowDown') globeRotation[1] = Math.max(-75, globeRotation[1] - 6);
+    else used = false;
+    if (!used) return;
+    event.preventDefault();
+    globeAuto = false;
+    drawGlobe();
+  });
+  loadWorld().then(() => { drawGlobe(); if (!reduceMotion) globeTimer = setInterval(() => { if (!globeAuto || globeDrag || document.hidden || $('#homePage').hidden) return; globeRotation[0] += 0.32; drawGlobe(); }, 40); }).catch(() => {});
+  new ResizeObserver(() => drawGlobe()).observe($('#heroGlobe'));
+}
+function tick(now) {
+  const dt = Math.min(1500, now - lastTick);
+  lastTick = now;
+  if (game && game.active && !game.paused && !game.revealed && !document.hidden) {
+    stats.totalMs += dt;
+    stats.categories[game.category].ms += dt;
+    game.elapsed += dt;
+    saveElapsed += dt;
+    if (game.mode === 'timed') {
+      game.remaining = Math.max(0, game.remaining - dt);
+      if (game.remaining <= 0) {
+        game.remaining = 0;
+        updateGameMetrics();
+        finishGame();
+      }
+    }
+    if (saveElapsed > 4000) { saveElapsed = 0; saveStats(); }
+  }
+  if (game && game.active) updateGameMetrics();
+  if (now - lastStatsPaint > 1000) {
+    lastStatsPaint = now;
+    $$('[data-total-time]').forEach(el => el.textContent = formatTime(stats.totalMs, true));
+  }
+  requestAnimationFrame(tick);
+}
+document.addEventListener('click', event => {
+  if (event.target.closest('#catalogPage [data-view]')) {
+    catalogState.view = event.target.closest('[data-view]').dataset.view;
+    renderCatalogResults();
+    return;
+  }
+  if (event.target.closest('#catalogPage [data-filter]')) {
+    catalogState.continent = event.target.closest('[data-filter]').dataset.filter;
+    catalogState.limit = 24;
+    renderCatalogResults();
+    return;
+  }
+  const help = event.target.closest('[data-help]');
+  if (help) { showHelp(); return; }
+  const quick = event.target.closest('[data-quick]');
+  if (quick) { startQuick(); return; }
+  const country = event.target.closest('[data-country]');
+  if (country) { showCountry(country.dataset.country); return; }
+  const nav = event.target.closest('[data-nav]');
+  if (nav) { go(nav.dataset.nav); return; }
+  const category = event.target.closest('[data-category]');
+  if (category) {
+    if (dialog.open) dialog.close();
+    go('setup', category.dataset.category);
+  }
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') closeSidebar();
+  if (!game || !game.active) return;
+  if (game.revealed && event.key === 'Enter') { event.preventDefault(); advance(); return; }
+  if (game.paused || game.revealed) return;
+  const n = +event.key;
+  if (n >= 1 && n <= 4) {
+    const button = $$('#questionContent .answer-option')[n - 1];
+    if (button) button.click();
+  }
+});
+document.addEventListener('error', event => {
+  const img = event.target;
+  if (!img || img.tagName !== 'IMG' || !img.dataset.flagCode) return;
+  if (img.closest('.quiz-flag-frame') && game && game.current && game.current.code === img.dataset.flagCode && !game.revealed) {
+    toast('تعذّر تحميل هذا العلم، نروح للي بعده');
+    game.cursor++;
+    showCurrentQuestion();
+    return;
+  }
+  const span = document.createElement('span');
+  span.className = 'flag-fallback';
+  span.textContent = img.dataset.flagCode.toUpperCase();
+  img.replaceWith(span);
+}, true);
+document.addEventListener('visibilitychange', () => {
+  if (!game || !game.active) return;
+  if (document.hidden) {
+    game.autoPaused = !game.paused;
+    game.paused = true;
+    renderPause();
+  } else if (game.autoPaused) {
+    game.paused = false;
+    game.autoPaused = false;
+    renderPause();
+  }
+});
+$('#mobileMenu').addEventListener('click', () => {
+  const open = $('#sidebar').classList.toggle('open');
+  $('#sidebarBackdrop').classList.toggle('open', open);
+  $('#mobileMenu').setAttribute('aria-expanded', String(open));
+  $('#mobileMenu').setAttribute('aria-label', open ? 'إغلاق القائمة' : 'فتح القائمة');
+});
+$('#sidebarBackdrop').addEventListener('click', closeSidebar);
+$('#soundButton').addEventListener('click', () => {
+  stats.sound = !stats.sound;
+  saveStats();
+  renderSound();
+  if (stats.sound) beep(true);
+});
+$('#topSearch').addEventListener('click', () => {
+  go('catalog');
+  setTimeout(() => { const input = $('#countrySearch'); if (input) input.focus(); }, 40);
+});
+renderPreview();
+renderHistory();
+renderSound();
+updateStatsView();
+initHeroGlobe();
+requestAnimationFrame(tick);
+</script>
+</body>
+</html>
